@@ -4,45 +4,20 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>PT MitraJaya Bahari</title>
+
   <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    .client-card {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-      border-radius: 16px;
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      transition: all 0.3s ease;
-      min-height: 96px;
-    }
 
-    .client-card:hover {
-      background: rgba(255, 255, 255, 0.08);
-      border-color: rgba(255, 255, 255, 0.2);
-      transform: translateY(-3px);
-    }
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=dark_mode,light_mode,translate"
+  />
 
-    .client-logo {
-      max-height: 40px;
-      max-width: 100%;
-      width: auto;
-      object-fit: contain;
-      filter: grayscale(100%) brightness(0.8);
-      transition: all 0.3s ease;
-    }
-
-    .client-card:hover .client-logo {
-      filter: grayscale(0%) brightness(1);
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 
-<body class="bg-neutral-950 text-white">
-
+<body class="light-mode">
   <!-- Header -->
-  <header id="site-header" class="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-neutral-950/80 backdrop-blur transition-all duration-300">
+  <header id="site-header" class="theme-header fixed inset-x-0 top-0 z-50 border-b backdrop-blur transition-all duration-300">
     <div id="header-inner" class="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 transition-all duration-300">
       <a href="#home" class="flex items-center gap-4">
         <img
@@ -53,40 +28,102 @@
         >
         <span
           id="site-brand"
-          class="text-base font-semibold tracking-[0.14em] text-white transition-all duration-300 md:text-lg"
+          class="theme-text text-base font-semibold tracking-[0.14em] transition-all duration-300 md:text-lg"
         >
           MITRAJAYA BAHARI
         </span>
       </a>
 
-      <nav class="hidden items-center gap-8 text-sm text-white/70 md:flex">
-        <a href="#home" class="hover:text-white">Home</a>
-        <a href="#about" class="hover:text-white">About</a>
-        <a href="#services" class="hover:text-white">Services</a>
-        <a href="#location" class="hover:text-white">Location</a>
-        <a href="#clients" class="hover:text-white">Clients</a>
-        <a href="#contact" class="hover:text-white">Contact</a>
-      </nav>
+      <div class="hidden items-center gap-4 md:flex">
+        <nav class="flex items-center gap-8 text-sm theme-muted">
+          <a href="#home" class="nav-link transition" data-i18n="nav.home">Home</a>
+          <a href="#about" class="nav-link transition" data-i18n="nav.about">About</a>
+          <a href="#services" class="nav-link transition" data-i18n="nav.services">Services</a>
+          <a href="#location" class="nav-link transition" data-i18n="nav.location">Location</a>
+          <a href="#clients" class="nav-link transition" data-i18n="nav.clients">Clients</a>
+          <a href="#contact" class="nav-link transition" data-i18n="nav.contact">Contact</a>
+        </nav>
 
-      <a
-        href="#contact"
-        class="hidden rounded-full bg-white px-5 py-2 text-sm font-medium text-neutral-950 transition-all duration-300 md:inline-block"
-      >
-        Contact Us
-      </a>
+        <button
+          id="lang-toggle-desktop"
+          type="button"
+          class="lang-toggle rounded-full px-3 py-2 text-sm font-medium"
+          aria-label="Toggle language"
+        >
+          <span class="material-symbols-outlined">translate</span>
+          <span id="lang-label-desktop">中文</span>
+        </button>
 
-      <button id="menu-btn" class="text-2xl md:hidden">☰</button>
+        <button
+          id="theme-toggle-desktop"
+          type="button"
+          class="theme-toggle rounded-full p-2"
+          aria-label="Toggle theme"
+        >
+          <span class="material-symbols-outlined" id="theme-icon-desktop">dark_mode</span>
+        </button>
+
+        <a
+          href="#contact"
+          class="theme-primary-btn hidden rounded-full px-5 py-2 text-sm font-medium transition-all duration-300 md:inline-block"
+          data-i18n="cta.contactUs"
+        >
+          Contact Us
+        </a>
+      </div>
+
+      <div class="flex items-center gap-3 md:hidden">
+        <button
+          id="lang-toggle-mobile-top"
+          type="button"
+          class="lang-toggle rounded-full px-3 py-2 text-xs font-medium"
+          aria-label="Toggle language"
+        >
+          <span class="material-symbols-outlined">translate</span>
+          <span id="lang-label-mobile-top">中文</span>
+        </button>
+
+        <button
+          id="theme-toggle-mobile-top"
+          type="button"
+          class="theme-toggle rounded-full p-2"
+          aria-label="Toggle theme"
+        >
+          <span class="material-symbols-outlined" id="theme-icon-mobile-top">dark_mode</span>
+        </button>
+
+        <button id="menu-btn" class="theme-text text-2xl">☰</button>
+      </div>
     </div>
 
     <!-- Mobile Menu -->
-    <div id="mobile-menu" class="hidden border-t border-white/10 bg-neutral-950 md:hidden">
-      <nav class="flex flex-col space-y-4 px-6 py-6 text-sm text-white/70">
-        <a href="#home" class="mobile-link transition hover:text-white">Home</a>
-        <a href="#about" class="mobile-link transition hover:text-white">About</a>
-        <a href="#services" class="mobile-link transition hover:text-white">Services</a>
-        <a href="#location" class="mobile-link transition hover:text-white">Location</a>
-        <a href="#clients" class="mobile-link transition hover:text-white">Clients</a>
-        <a href="#contact" class="mobile-link transition hover:text-white">Contact</a>
+    <div id="mobile-menu" class="theme-surface hidden border-t border-theme md:hidden">
+      <nav class="flex flex-col space-y-4 px-6 py-6 text-sm theme-muted">
+        <a href="#home" class="mobile-link transition" data-i18n="nav.home">Home</a>
+        <a href="#about" class="mobile-link transition" data-i18n="nav.about">About</a>
+        <a href="#services" class="mobile-link transition" data-i18n="nav.services">Services</a>
+        <a href="#location" class="mobile-link transition" data-i18n="nav.location">Location</a>
+        <a href="#clients" class="mobile-link transition" data-i18n="nav.clients">Clients</a>
+        <a href="#contact" class="mobile-link transition" data-i18n="nav.contact">Contact</a>
+
+        <button
+          id="lang-toggle-mobile-menu"
+          type="button"
+          class="lang-toggle mt-2 rounded-full px-4 py-2 text-sm font-medium"
+          aria-label="Toggle language"
+        >
+          <span class="material-symbols-outlined">translate</span>
+          <span id="lang-label-mobile-menu">中文</span>
+        </button>
+
+        <button
+          id="theme-toggle-mobile-menu"
+          type="button"
+          class="theme-toggle mt-2 rounded-full p-2"
+          aria-label="Toggle theme"
+        >
+          <span class="material-symbols-outlined" id="theme-icon-mobile-menu">dark_mode</span>
+        </button>
       </nav>
     </div>
   </header>
@@ -94,21 +131,21 @@
   <!-- Hero -->
   <section id="home" class="relative min-h-screen scroll-mt-24">
     <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1494412519320-aa613dfb7738')] bg-cover bg-center"></div>
-    <div class="absolute inset-0 bg-neutral-950/70"></div>
+    <div class="hero-overlay absolute inset-0"></div>
 
     <div class="relative mx-auto flex min-h-screen max-w-7xl items-center px-6 pt-32">
-      <div class="max-w-4xl">
-        <h1 class="text-5xl font-semibold md:text-7xl">
+      <div class="max-w-4xl text-white">
+        <h1 class="text-5xl font-semibold md:text-7xl" data-i18n="hero.title">
           Integrated Logistics, Depot & Customs Solutions
         </h1>
-        <p class="mt-6 max-w-2xl text-white/70">
+        <p class="mt-6 max-w-2xl text-white/80" data-i18n="hero.desc">
           Supporting reliable cargo movement through container depot, ISO tank depot,
           transportation, customs brokerage, and warehousing services.
         </p>
 
         <div class="mt-10 flex flex-wrap gap-4">
-          <a href="#contact" class="rounded-full bg-blue-500 px-6 py-3 transition hover:bg-blue-400">Contact Us</a>
-          <a href="#services" class="rounded-full border border-white/20 px-6 py-3 transition hover:bg-white/5">Explore Services</a>
+          <a href="#contact" class="theme-primary-btn rounded-full px-6 py-3 transition hover:bg-blue-400" data-i18n="cta.contactUs">Contact Us</a>
+          <a href="#services" class="theme-secondary-btn rounded-full border px-6 py-3 transition hover:bg-white/10" data-i18n="cta.exploreServices">Explore Services</a>
         </div>
       </div>
     </div>
@@ -116,125 +153,123 @@
 
   <!-- Services -->
   <section id="services" class="mx-auto max-w-7xl scroll-mt-24 px-6 py-24">
-    <h2 class="mb-4 text-4xl font-semibold">Services</h2>
-    <p class="mb-10 max-w-2xl text-white/60">
+    <h2 class="theme-text mb-4 text-4xl font-semibold" data-i18n="services.title">Services</h2>
+    <p class="theme-muted mb-10 max-w-2xl" data-i18n="services.intro">
       Select a service to view more details about our operational capabilities.
     </p>
 
     <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-
-      <button type="button" class="service-card group rounded-3xl border border-white/10 bg-white/5 p-8 text-left transition hover:border-white/20 hover:bg-white/10" aria-expanded="false">
+      <button type="button" class="service-card theme-card theme-card-hover group rounded-3xl border p-8 text-left transition" aria-expanded="false">
         <div class="flex items-start justify-between gap-4">
-          <h3 class="text-xl font-semibold">Container Depot</h3>
-          <span class="service-icon text-2xl leading-none text-white/50 transition-transform duration-300">+</span>
+          <h3 class="theme-text text-xl font-semibold" data-i18n="services.containerDepot.title">Container Depot</h3>
+          <span class="service-icon theme-muted text-2xl leading-none transition-transform duration-300">+</span>
         </div>
         <div class="service-content grid grid-rows-[0fr] transition-all duration-500 ease-out">
           <div class="overflow-hidden">
-            <p class="pt-4 text-sm leading-7 text-white/65">
+            <p class="theme-muted pt-4 text-sm leading-7" data-i18n="services.containerDepot.desc">
               Our depot offers secure and efficient container storage and maintenance.
             </p>
           </div>
         </div>
       </button>
 
-      <button type="button" class="service-card group rounded-3xl border border-white/10 bg-white/5 p-8 text-left transition hover:border-white/20 hover:bg-white/10" aria-expanded="false">
+      <button type="button" class="service-card theme-card theme-card-hover group rounded-3xl border p-8 text-left transition" aria-expanded="false">
         <div class="flex items-start justify-between gap-4">
-          <h3 class="text-xl font-semibold">ISO Tank Depot</h3>
-          <span class="service-icon text-2xl leading-none text-white/50 transition-transform duration-300">+</span>
+          <h3 class="theme-text text-xl font-semibold" data-i18n="services.isoTank.title">ISO Tank Depot</h3>
+          <span class="service-icon theme-muted text-2xl leading-none transition-transform duration-300">+</span>
         </div>
         <div class="service-content grid grid-rows-[0fr] transition-all duration-500 ease-out">
           <div class="overflow-hidden">
-            <p class="pt-4 text-sm leading-7 text-white/65">
+            <p class="theme-muted pt-4 text-sm leading-7" data-i18n="services.isoTank.desc">
               Specialized storage and maintenance for ISO tanks.
             </p>
           </div>
         </div>
       </button>
 
-      <button type="button" class="service-card group rounded-3xl border border-white/10 bg-white/5 p-8 text-left transition hover:border-white/20 hover:bg-white/10" aria-expanded="false">
+      <button type="button" class="service-card theme-card theme-card-hover group rounded-3xl border p-8 text-left transition" aria-expanded="false">
         <div class="flex items-start justify-between gap-4">
-          <h3 class="text-xl font-semibold">Trucking & Transportation</h3>
-          <span class="service-icon text-2xl leading-none text-white/50 transition-transform duration-300">+</span>
+          <h3 class="theme-text text-xl font-semibold" data-i18n="services.trucking.title">Trucking & Transportation</h3>
+          <span class="service-icon theme-muted text-2xl leading-none transition-transform duration-300">+</span>
         </div>
         <div class="service-content grid grid-rows-[0fr] transition-all duration-500 ease-out">
           <div class="overflow-hidden">
-            <p class="pt-4 text-sm leading-7 text-white/65">
+            <p class="theme-muted pt-4 text-sm leading-7" data-i18n="services.trucking.desc">
               Reliable trucking and transportation services for goods and containers.
             </p>
           </div>
         </div>
       </button>
 
-      <button type="button" class="service-card group rounded-3xl border border-white/10 bg-white/5 p-8 text-left transition hover:border-white/20 hover:bg-white/10" aria-expanded="false">
+      <button type="button" class="service-card theme-card theme-card-hover group rounded-3xl border p-8 text-left transition" aria-expanded="false">
         <div class="flex items-start justify-between gap-4">
-          <h3 class="text-xl font-semibold">Customs Brokerage</h3>
-          <span class="service-icon text-2xl leading-none text-white/50 transition-transform duration-300">+</span>
+          <h3 class="theme-text text-xl font-semibold" data-i18n="services.customs.title">Customs Brokerage</h3>
+          <span class="service-icon theme-muted text-2xl leading-none transition-transform duration-300">+</span>
         </div>
         <div class="service-content grid grid-rows-[0fr] transition-all duration-500 ease-out">
           <div class="overflow-hidden">
-            <p class="pt-4 text-sm leading-7 text-white/65">
+            <p class="theme-muted pt-4 text-sm leading-7" data-i18n="services.customs.desc">
               Expert customs clearance and documentation handling.
             </p>
           </div>
         </div>
       </button>
 
-      <button type="button" class="service-card group rounded-3xl border border-white/10 bg-white/5 p-8 text-left transition hover:border-white/20 hover:bg-white/10" aria-expanded="false">
+      <button type="button" class="service-card theme-card theme-card-hover group rounded-3xl border p-8 text-left transition" aria-expanded="false">
         <div class="flex items-start justify-between gap-4">
-          <h3 class="text-xl font-semibold">Logistics</h3>
-          <span class="service-icon text-2xl leading-none text-white/50 transition-transform duration-300">+</span>
+          <h3 class="theme-text text-xl font-semibold" data-i18n="services.logistics.title">Logistics</h3>
+          <span class="service-icon theme-muted text-2xl leading-none transition-transform duration-300">+</span>
         </div>
         <div class="service-content grid grid-rows-[0fr] transition-all duration-500 ease-out">
           <div class="overflow-hidden">
-            <p class="pt-4 text-sm leading-7 text-white/65">
+            <p class="theme-muted pt-4 text-sm leading-7" data-i18n="services.logistics.desc">
               Complete logistics option.
             </p>
           </div>
         </div>
       </button>
 
-      <button type="button" class="service-card group rounded-3xl border border-white/10 bg-white/5 p-8 text-left transition hover:border-white/20 hover:bg-white/10" aria-expanded="false">
+      <button type="button" class="service-card theme-card theme-card-hover group rounded-3xl border p-8 text-left transition" aria-expanded="false">
         <div class="flex items-start justify-between gap-4">
-          <h3 class="text-xl font-semibold">Warehousing</h3>
-          <span class="service-icon text-2xl leading-none text-white/50 transition-transform duration-300">+</span>
+          <h3 class="theme-text text-xl font-semibold" data-i18n="services.warehousing.title">Warehousing</h3>
+          <span class="service-icon theme-muted text-2xl leading-none transition-transform duration-300">+</span>
         </div>
         <div class="service-content grid grid-rows-[0fr] transition-all duration-500 ease-out">
           <div class="overflow-hidden">
-            <p class="pt-4 text-sm leading-7 text-white/65">
+            <p class="theme-muted pt-4 text-sm leading-7" data-i18n="services.warehousing.desc">
               Complete warehouse storage options.
             </p>
           </div>
         </div>
       </button>
-
     </div>
   </section>
 
   <!-- About -->
   <section id="about" class="mx-auto grid max-w-7xl scroll-mt-24 gap-12 px-6 py-24 lg:grid-cols-2">
     <div>
-      <p class="text-sm uppercase tracking-[0.28em] text-white/50">About</p>
-      <h2 class="mt-4 text-4xl font-semibold">Decades of experience supporting international trade</h2>
-      <p class="mt-6 max-w-xl text-lg leading-8 text-white/70">
+      <p class="section-label text-sm uppercase tracking-[0.28em]" data-i18n="about.label">About</p>
+      <h2 class="theme-text mt-4 text-4xl font-semibold" data-i18n="about.title">Decades of experience supporting international trade</h2>
+      <p class="theme-muted mt-6 max-w-xl text-lg leading-8" data-i18n="about.desc">
         Founded in 1985, MJB has expanded from freight forwarding and customs services
         into depot, isotank and logistics operations to support evolving cargo demands.
       </p>
     </div>
 
     <div class="grid gap-4">
-      <div class="rounded-3xl border border-white/10 bg-white/5 p-6">
-        <div class="text-sm text-white/50">1985</div>
-        <div class="mt-2 text-xl font-semibold">Founded</div>
+      <div class="theme-card rounded-3xl border p-6">
+        <div class="theme-muted-soft text-sm">1985</div>
+        <div class="theme-text mt-2 text-xl font-semibold" data-i18n="about.founded">Founded</div>
       </div>
 
-      <div class="rounded-3xl border border-white/10 bg-white/5 p-6">
-        <div class="text-sm text-white/50">1995</div>
-        <div class="mt-2 text-xl font-semibold">Expanded into Container Depot Services</div>
+      <div class="theme-card rounded-3xl border p-6">
+        <div class="theme-muted-soft text-sm">1995</div>
+        <div class="theme-text mt-2 text-xl font-semibold" data-i18n="about.expanded">Expanded into Container Depot Services</div>
       </div>
 
-      <div class="rounded-3xl border border-white/10 bg-white/5 p-6">
-        <div class="text-sm text-white/50">2018</div>
-        <div class="mt-2 text-xl font-semibold">Established Isotank Depot Capability</div>
+      <div class="theme-card rounded-3xl border p-6">
+        <div class="theme-muted-soft text-sm">2018</div>
+        <div class="theme-text mt-2 text-xl font-semibold" data-i18n="about.isotank">Established Isotank Depot Capability</div>
       </div>
     </div>
   </section>
@@ -243,18 +278,18 @@
   <section id="location" class="mx-auto max-w-7xl scroll-mt-24 px-6 py-24">
     <div class="grid items-center gap-12 lg:grid-cols-2">
       <div>
-        <p class="text-sm uppercase tracking-[0.28em] text-white/50">Location</p>
-        <h2 class="mt-4 text-4xl font-semibold">Strategically located in Belawan</h2>
+        <p class="section-label text-sm uppercase tracking-[0.28em]" data-i18n="location.label">Location</p>
+        <h2 class="theme-text mt-4 text-4xl font-semibold" data-i18n="location.title">Strategically located in Belawan</h2>
 
-        <p class="mt-6 max-w-xl text-white/70">
+        <p class="theme-muted mt-6 max-w-xl" data-i18n="location.desc">
           Our operations are based in Belawan, North Sumatra — one of Indonesia’s key
           port areas, enabling efficient access to international shipping routes,
           container handling, and logistics infrastructure.
         </p>
 
-        <div class="mt-8 space-y-3 text-white/80">
-          <p><strong>Belawan Depot</strong></p>
-          <p class="text-white/60">
+        <div class="mt-8 space-y-3">
+          <p class="theme-text"><strong data-i18n="location.depot">Belawan Depot</strong></p>
+          <p class="theme-muted" data-i18n="location.address">
             Jalan Raya Pelabuhan Gabion, Belawan<br>
             North Sumatra, Indonesia
           </p>
@@ -263,14 +298,15 @@
             href="https://maps.google.com/?q=Belawan+North+Sumatra"
             target="_blank"
             rel="noopener noreferrer"
-            class="mt-4 inline-block text-blue-400 hover:underline"
+            class="theme-link mt-4 inline-block"
+            data-i18n="location.map"
           >
             View on Google Maps →
           </a>
         </div>
       </div>
 
-      <div class="h-[400px] w-full overflow-hidden rounded-3xl border border-white/10">
+      <div class="h-[400px] w-full overflow-hidden rounded-3xl border border-theme">
         <iframe
           src="https://maps.google.com/maps?q=Belawan%20North%20Sumatra&t=&z=13&ie=UTF8&iwloc=&output=embed"
           class="h-full w-full border-0"
@@ -284,14 +320,14 @@
   <!-- Clients -->
   <section id="clients" class="mx-auto max-w-7xl scroll-mt-24 px-6 py-24">
     <div class="mb-12 text-center">
-      <p class="text-sm uppercase tracking-[0.28em] text-white/50">Clients</p>
-      <h2 class="mt-4 text-4xl font-semibold">Trusted by our partners</h2>
-      <p class="mx-auto mt-4 max-w-2xl text-white/60">
+      <p class="section-label text-sm uppercase tracking-[0.28em]" data-i18n="clients.label">Clients</p>
+      <h2 class="theme-text mt-4 text-4xl font-semibold" data-i18n="clients.title">Trusted by our partners</h2>
+      <p class="theme-muted mx-auto mt-4 max-w-2xl" data-i18n="clients.desc">
         We work with a range of clients across logistics, shipping, and industrial sectors.
       </p>
     </div>
 
-    <div class="grid grid-cols-2 gap-6 items-center sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+    <div class="grid grid-cols-2 items-center gap-6 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
       <div class="client-card"><img src="ctp-line.jpg" alt="CTP Line" class="client-logo"></div>
       <div class="client-card"><img src="makhor.jpg" alt="Makhor" class="client-logo"></div>
       <div class="client-card"><img src="mtt-shipping.jpg" alt="MTT Shipping" class="client-logo"></div>
@@ -308,15 +344,15 @@
 
   <!-- Contact -->
   <section id="contact" class="mx-auto max-w-7xl scroll-mt-24 px-6 py-24">
-    <div class="rounded-3xl bg-blue-600 p-10">
-      <h2 class="text-3xl font-semibold">Need a logistics partner?</h2>
+    <div class="theme-contact-bg rounded-3xl p-10 text-white">
+      <h2 class="text-3xl font-semibold" data-i18n="contact.title">Need a logistics partner?</h2>
 
       <div class="mt-6 flex flex-wrap gap-4">
-        <button id="open-contact" class="rounded-full bg-white px-6 py-3 text-black">
+        <button id="open-contact" class="rounded-full bg-white px-6 py-3 text-black" data-i18n="contact.callUs">
           Call Us
         </button>
 
-        <button id="open-contact-email" class="rounded-full border border-white px-6 py-3">
+        <button id="open-contact-email" class="rounded-full border border-white px-6 py-3 text-white" data-i18n="contact.emailUs">
           Email Us
         </button>
       </div>
@@ -325,169 +361,48 @@
 
   <!-- Contact Panel -->
   <div id="contact-panel" class="fixed inset-0 z-50 hidden">
-    <div id="contact-backdrop" class="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
+    <div id="contact-backdrop" class="theme-backdrop absolute inset-0 backdrop-blur-sm"></div>
 
     <div
       id="panel"
-      class="absolute bottom-0 left-0 right-0 translate-y-full rounded-t-3xl border-t border-white/10 bg-neutral-900 p-6 transition-transform duration-500 ease-out"
+      class="theme-panel absolute bottom-0 left-0 right-0 translate-y-full rounded-t-3xl border-t p-6 transition-transform duration-500 ease-out"
     >
-      <div class="mx-auto mb-6 h-1.5 w-12 rounded-full bg-white/20"></div>
+      <div class="panel-handle mx-auto mb-6 h-1.5 w-12 rounded-full"></div>
 
-      <h3 class="mb-6 text-center text-xl font-semibold">Contact Our Offices</h3>
+      <h3 class="mb-6 text-center text-xl font-semibold" data-i18n="contact.panelTitle">Contact Our Offices</h3>
 
       <div class="space-y-6">
-        <div class="flex items-center justify-between rounded-2xl border border-white/10 bg-white/5 p-5">
+        <div class="theme-contact-card flex items-center justify-between rounded-2xl p-5">
           <div>
-            <p class="text-sm text-white/50">Medan</p>
-            <p class="text-lg font-semibold">(+62) 61 4571111</p>
+            <p class="theme-panel-muted text-sm" data-i18n="contact.medan">Medan</p>
+            <p class="mt-1 text-lg font-semibold">(+62) 61 4571111</p>
           </div>
-          <a href="tel:+62614571111" class="rounded-full bg-blue-500 px-4 py-2 text-sm">Call</a>
+          <a href="tel:+62614571111" class="theme-primary-btn rounded-full px-4 py-2 text-sm" data-i18n="contact.call">Call</a>
         </div>
 
-        <div class="flex items-center justify-between rounded-2xl border border-white/10 bg-white/5 p-5">
+        <div class="theme-contact-card flex items-center justify-between rounded-2xl p-5">
           <div>
-            <p class="text-sm text-white/50">Belawan</p>
-            <p class="text-lg font-semibold">(+62) 61 6940095</p>
+            <p class="theme-panel-muted text-sm" data-i18n="contact.belawan">Belawan</p>
+            <p class="mt-1 text-lg font-semibold">(+62) 61 6940095</p>
           </div>
-          <a href="tel:+62616940095" class="rounded-full bg-blue-500 px-4 py-2 text-sm">Call</a>
+          <a href="tel:+62616940095" class="theme-primary-btn rounded-full px-4 py-2 text-sm" data-i18n="contact.call">Call</a>
         </div>
 
-        <div class="flex items-center justify-between rounded-2xl border border-white/10 bg-white/5 p-5">
+        <div class="theme-contact-card flex items-center justify-between rounded-2xl p-5">
           <div>
-            <p class="text-sm text-white/50">Email (Belawan)</p>
-            <p class="text-lg font-semibold">info@mjb.co.id</p>
+            <p class="theme-panel-muted text-sm" data-i18n="contact.emailBelawan">Email (Belawan)</p>
+            <p class="mt-1 text-lg font-semibold">info@mjb.co.id</p>
           </div>
-          <a href="mailto:info@mjb.co.id" class="rounded-full bg-white px-4 py-2 text-sm text-black">Email</a>
+          <a href="mailto:info@mjb.co.id" class="theme-toggle rounded-full px-4 py-2 text-sm font-medium" data-i18n="contact.email">Email</a>
         </div>
       </div>
 
-      <button id="close-panel" class="mt-8 w-full rounded-full border border-white/20 py-3">
+      <button id="close-panel" class="theme-toggle mt-8 w-full rounded-full py-3" data-i18n="contact.close">
         Close
       </button>
     </div>
   </div>
 
-  <!-- Scripts -->
-  <script>
-    const menuBtn = document.getElementById('menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const mobileLinks = document.querySelectorAll('.mobile-link');
-
-    const siteHeader = document.getElementById('site-header');
-    const headerInner = document.getElementById('header-inner');
-    const siteLogo = document.getElementById('site-logo');
-    const siteBrand = document.getElementById('site-brand');
-
-    function closeMobileMenu() {
-      mobileMenu.classList.add('hidden');
-      menuBtn.textContent = '☰';
-    }
-
-    function openMobileMenu() {
-      mobileMenu.classList.remove('hidden');
-      menuBtn.textContent = '✕';
-    }
-
-    menuBtn.addEventListener('click', () => {
-      if (mobileMenu.classList.contains('hidden')) {
-        openMobileMenu();
-      } else {
-        closeMobileMenu();
-      }
-    });
-
-    mobileLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        closeMobileMenu();
-      });
-    });
-
-    function updateHeaderOnScroll() {
-      const isScrolled = window.scrollY > 24;
-
-      if (isScrolled) {
-        headerInner.classList.remove('py-5');
-        headerInner.classList.add('py-3');
-
-        siteLogo.classList.remove('h-12', 'md:h-14');
-        siteLogo.classList.add('h-9', 'md:h-10');
-
-        siteBrand.classList.remove('text-base', 'md:text-lg', 'tracking-[0.14em]');
-        siteBrand.classList.add('text-sm', 'md:text-base', 'tracking-[0.1em]');
-
-        siteHeader.classList.remove('bg-neutral-950/80');
-        siteHeader.classList.add('bg-neutral-950/90');
-      } else {
-        headerInner.classList.remove('py-3');
-        headerInner.classList.add('py-5');
-
-        siteLogo.classList.remove('h-9', 'md:h-10');
-        siteLogo.classList.add('h-12', 'md:h-14');
-
-        siteBrand.classList.remove('text-sm', 'md:text-base', 'tracking-[0.1em]');
-        siteBrand.classList.add('text-base', 'md:text-lg', 'tracking-[0.14em]');
-
-        siteHeader.classList.remove('bg-neutral-950/90');
-        siteHeader.classList.add('bg-neutral-950/80');
-      }
-    }
-
-    window.addEventListener('scroll', updateHeaderOnScroll);
-    updateHeaderOnScroll();
-
-    const serviceCards = document.querySelectorAll('.service-card');
-
-    serviceCards.forEach(card => {
-      card.addEventListener('click', () => {
-        const isOpen = card.getAttribute('aria-expanded') === 'true';
-
-        serviceCards.forEach(otherCard => {
-          otherCard.setAttribute('aria-expanded', 'false');
-          otherCard.classList.remove('bg-white/10', 'border-white/20');
-          const otherContent = otherCard.querySelector('.service-content');
-          const otherIcon = otherCard.querySelector('.service-icon');
-          otherContent.classList.remove('grid-rows-[1fr]');
-          otherContent.classList.add('grid-rows-[0fr]');
-          otherIcon.classList.remove('rotate-45');
-        });
-
-        if (!isOpen) {
-          card.setAttribute('aria-expanded', 'true');
-          card.classList.add('bg-white/10', 'border-white/20');
-          const content = card.querySelector('.service-content');
-          const icon = card.querySelector('.service-icon');
-          content.classList.remove('grid-rows-[0fr]');
-          content.classList.add('grid-rows-[1fr]');
-          icon.classList.add('rotate-45');
-        }
-      });
-    });
-
-    const openBtn = document.getElementById('open-contact');
-    const openEmailBtn = document.getElementById('open-contact-email');
-    const panel = document.getElementById('panel');
-    const wrapper = document.getElementById('contact-panel');
-    const closeBtn = document.getElementById('close-panel');
-    const backdrop = document.getElementById('contact-backdrop');
-
-    function openPanel() {
-      wrapper.classList.remove('hidden');
-      setTimeout(() => {
-        panel.classList.remove('translate-y-full');
-      }, 10);
-    }
-
-    function closePanel() {
-      panel.classList.add('translate-y-full');
-      setTimeout(() => {
-        wrapper.classList.add('hidden');
-      }, 300);
-    }
-
-    openBtn.addEventListener('click', openPanel);
-    openEmailBtn.addEventListener('click', openPanel);
-    closeBtn.addEventListener('click', closePanel);
-    backdrop.addEventListener('click', closePanel);
-  </script>
+  <script src="app.js"></script>
 </body>
 </html>
