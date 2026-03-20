@@ -5,12 +5,44 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>PT MitraJaya Bahari</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .client-card {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      transition: all 0.3s ease;
+      min-height: 96px;
+    }
+
+    .client-card:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.2);
+      transform: translateY(-3px);
+    }
+
+    .client-logo {
+      max-height: 40px;
+      max-width: 100%;
+      width: auto;
+      object-fit: contain;
+      filter: grayscale(100%) brightness(0.8);
+      transition: all 0.3s ease;
+    }
+
+    .client-card:hover .client-logo {
+      filter: grayscale(0%) brightness(1);
+    }
+  </style>
 </head>
 
 <body class="bg-neutral-950 text-white">
 
-<!-- Header -->
-<header id="site-header" class="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-neutral-950/80 backdrop-blur transition-all duration-300">
+  <!-- Header -->
+  <header id="site-header" class="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-neutral-950/80 backdrop-blur transition-all duration-300">
     <div id="header-inner" class="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 transition-all duration-300">
       <a href="#home" class="flex items-center gap-4">
         <img
@@ -26,25 +58,26 @@
           MITRAJAYA BAHARI
         </span>
       </a>
-  
+
       <nav class="hidden items-center gap-8 text-sm text-white/70 md:flex">
         <a href="#home" class="hover:text-white">Home</a>
         <a href="#about" class="hover:text-white">About</a>
         <a href="#services" class="hover:text-white">Services</a>
         <a href="#location" class="hover:text-white">Location</a>
+        <a href="#clients" class="hover:text-white">Clients</a>
         <a href="#contact" class="hover:text-white">Contact</a>
       </nav>
-  
+
       <a
         href="#contact"
         class="hidden rounded-full bg-white px-5 py-2 text-sm font-medium text-neutral-950 transition-all duration-300 md:inline-block"
       >
         Contact Us
       </a>
-  
+
       <button id="menu-btn" class="text-2xl md:hidden">☰</button>
     </div>
-  
+
     <!-- Mobile Menu -->
     <div id="mobile-menu" class="hidden border-t border-white/10 bg-neutral-950 md:hidden">
       <nav class="flex flex-col space-y-4 px-6 py-6 text-sm text-white/70">
@@ -52,10 +85,12 @@
         <a href="#about" class="mobile-link transition hover:text-white">About</a>
         <a href="#services" class="mobile-link transition hover:text-white">Services</a>
         <a href="#location" class="mobile-link transition hover:text-white">Location</a>
+        <a href="#clients" class="mobile-link transition hover:text-white">Clients</a>
         <a href="#contact" class="mobile-link transition hover:text-white">Contact</a>
       </nav>
     </div>
   </header>
+
   <!-- Hero -->
   <section id="home" class="relative min-h-screen scroll-mt-24">
     <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1494412519320-aa613dfb7738')] bg-cover bg-center"></div>
@@ -63,7 +98,7 @@
 
     <div class="relative mx-auto flex min-h-screen max-w-7xl items-center px-6 pt-32">
       <div class="max-w-4xl">
-        <h1 class="text-5xl md:text-7xl font-semibold">
+        <h1 class="text-5xl font-semibold md:text-7xl">
           Integrated Logistics, Depot & Customs Solutions
         </h1>
         <p class="mt-6 max-w-2xl text-white/70">
@@ -88,7 +123,6 @@
 
     <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
 
-      <!-- Card 1 -->
       <button type="button" class="service-card group rounded-3xl border border-white/10 bg-white/5 p-8 text-left transition hover:border-white/20 hover:bg-white/10" aria-expanded="false">
         <div class="flex items-start justify-between gap-4">
           <h3 class="text-xl font-semibold">Container Depot</h3>
@@ -103,7 +137,6 @@
         </div>
       </button>
 
-      <!-- Card 2 -->
       <button type="button" class="service-card group rounded-3xl border border-white/10 bg-white/5 p-8 text-left transition hover:border-white/20 hover:bg-white/10" aria-expanded="false">
         <div class="flex items-start justify-between gap-4">
           <h3 class="text-xl font-semibold">ISO Tank Depot</h3>
@@ -118,7 +151,6 @@
         </div>
       </button>
 
-      <!-- Card 3 -->
       <button type="button" class="service-card group rounded-3xl border border-white/10 bg-white/5 p-8 text-left transition hover:border-white/20 hover:bg-white/10" aria-expanded="false">
         <div class="flex items-start justify-between gap-4">
           <h3 class="text-xl font-semibold">Trucking & Transportation</h3>
@@ -133,7 +165,6 @@
         </div>
       </button>
 
-      <!-- Card 4 -->
       <button type="button" class="service-card group rounded-3xl border border-white/10 bg-white/5 p-8 text-left transition hover:border-white/20 hover:bg-white/10" aria-expanded="false">
         <div class="flex items-start justify-between gap-4">
           <h3 class="text-xl font-semibold">Customs Brokerage</h3>
@@ -148,7 +179,6 @@
         </div>
       </button>
 
-      <!-- Card 5 -->
       <button type="button" class="service-card group rounded-3xl border border-white/10 bg-white/5 p-8 text-left transition hover:border-white/20 hover:bg-white/10" aria-expanded="false">
         <div class="flex items-start justify-between gap-4">
           <h3 class="text-xl font-semibold">Logistics</h3>
@@ -163,7 +193,6 @@
         </div>
       </button>
 
-      <!-- Card 6 -->
       <button type="button" class="service-card group rounded-3xl border border-white/10 bg-white/5 p-8 text-left transition hover:border-white/20 hover:bg-white/10" aria-expanded="false">
         <div class="flex items-start justify-between gap-4">
           <h3 class="text-xl font-semibold">Warehousing</h3>
@@ -213,7 +242,6 @@
   <!-- Location -->
   <section id="location" class="mx-auto max-w-7xl scroll-mt-24 px-6 py-24">
     <div class="grid items-center gap-12 lg:grid-cols-2">
-
       <div>
         <p class="text-sm uppercase tracking-[0.28em] text-white/50">Location</p>
         <h2 class="mt-4 text-4xl font-semibold">Strategically located in Belawan</h2>
@@ -250,7 +278,31 @@
           referrerpolicy="no-referrer-when-downgrade"
         ></iframe>
       </div>
+    </div>
+  </section>
 
+  <!-- Clients -->
+  <section id="clients" class="mx-auto max-w-7xl scroll-mt-24 px-6 py-24">
+    <div class="mb-12 text-center">
+      <p class="text-sm uppercase tracking-[0.28em] text-white/50">Clients</p>
+      <h2 class="mt-4 text-4xl font-semibold">Trusted by our partners</h2>
+      <p class="mx-auto mt-4 max-w-2xl text-white/60">
+        We work with a range of clients across logistics, shipping, and industrial sectors.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-2 gap-6 items-center sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+      <div class="client-card"><img src="ctp-line.jpg" alt="CTP Line" class="client-logo"></div>
+      <div class="client-card"><img src="makhor.jpg" alt="Makhor" class="client-logo"></div>
+      <div class="client-card"><img src="mtt-shipping.jpg" alt="MTT Shipping" class="client-logo"></div>
+      <div class="client-card"><img src="cma-cgm.png" alt="CMA CGM" class="client-logo"></div>
+      <div class="client-card"><img src="florens.png" alt="Florens" class="client-logo"></div>
+      <div class="client-card"><img src="osl.png" alt="OSL" class="client-logo"></div>
+      <div class="client-card"><img src="seaco.png" alt="Seaco" class="client-logo"></div>
+      <div class="client-card"><img src="textainer.jpg" alt="Textainer" class="client-logo"></div>
+      <div class="client-card"><img src="tslines.jpg" alt="TS Lines" class="client-logo"></div>
+      <div class="client-card"><img src="vertex.jpg" alt="Vertex" class="client-logo"></div>
+      <div class="client-card"><img src="wanhai.png" alt="Wan Hai" class="client-logo"></div>
     </div>
   </section>
 
@@ -289,9 +341,7 @@
             <p class="text-sm text-white/50">Medan</p>
             <p class="text-lg font-semibold">(+62) 61 4571111</p>
           </div>
-          <a href="tel:+62614571111" class="rounded-full bg-blue-500 px-4 py-2 text-sm">
-            Call
-          </a>
+          <a href="tel:+62614571111" class="rounded-full bg-blue-500 px-4 py-2 text-sm">Call</a>
         </div>
 
         <div class="flex items-center justify-between rounded-2xl border border-white/10 bg-white/5 p-5">
@@ -299,9 +349,7 @@
             <p class="text-sm text-white/50">Belawan</p>
             <p class="text-lg font-semibold">(+62) 61 6940095</p>
           </div>
-          <a href="tel:+62616940095" class="rounded-full bg-blue-500 px-4 py-2 text-sm">
-            Call
-          </a>
+          <a href="tel:+62616940095" class="rounded-full bg-blue-500 px-4 py-2 text-sm">Call</a>
         </div>
 
         <div class="flex items-center justify-between rounded-2xl border border-white/10 bg-white/5 p-5">
@@ -309,9 +357,7 @@
             <p class="text-sm text-white/50">Email (Belawan)</p>
             <p class="text-lg font-semibold">info@mjb.co.id</p>
           </div>
-          <a href="mailto:info@mjb.co.id" class="rounded-full bg-white px-4 py-2 text-sm text-black">
-            Email
-          </a>
+          <a href="mailto:info@mjb.co.id" class="rounded-full bg-white px-4 py-2 text-sm text-black">Email</a>
         </div>
       </div>
 
@@ -326,22 +372,22 @@
     const menuBtn = document.getElementById('menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
     const mobileLinks = document.querySelectorAll('.mobile-link');
-  
+
     const siteHeader = document.getElementById('site-header');
     const headerInner = document.getElementById('header-inner');
     const siteLogo = document.getElementById('site-logo');
     const siteBrand = document.getElementById('site-brand');
-  
+
     function closeMobileMenu() {
       mobileMenu.classList.add('hidden');
       menuBtn.textContent = '☰';
     }
-  
+
     function openMobileMenu() {
       mobileMenu.classList.remove('hidden');
       menuBtn.textContent = '✕';
     }
-  
+
     menuBtn.addEventListener('click', () => {
       if (mobileMenu.classList.contains('hidden')) {
         openMobileMenu();
@@ -349,53 +395,52 @@
         closeMobileMenu();
       }
     });
-  
+
     mobileLinks.forEach(link => {
       link.addEventListener('click', () => {
         closeMobileMenu();
       });
     });
-  
+
     function updateHeaderOnScroll() {
       const isScrolled = window.scrollY > 24;
-  
+
       if (isScrolled) {
         headerInner.classList.remove('py-5');
         headerInner.classList.add('py-3');
-  
+
         siteLogo.classList.remove('h-12', 'md:h-14');
         siteLogo.classList.add('h-9', 'md:h-10');
-  
+
         siteBrand.classList.remove('text-base', 'md:text-lg', 'tracking-[0.14em]');
         siteBrand.classList.add('text-sm', 'md:text-base', 'tracking-[0.1em]');
-  
+
         siteHeader.classList.remove('bg-neutral-950/80');
         siteHeader.classList.add('bg-neutral-950/90');
       } else {
         headerInner.classList.remove('py-3');
         headerInner.classList.add('py-5');
-  
+
         siteLogo.classList.remove('h-9', 'md:h-10');
         siteLogo.classList.add('h-12', 'md:h-14');
-  
+
         siteBrand.classList.remove('text-sm', 'md:text-base', 'tracking-[0.1em]');
         siteBrand.classList.add('text-base', 'md:text-lg', 'tracking-[0.14em]');
-  
+
         siteHeader.classList.remove('bg-neutral-950/90');
         siteHeader.classList.add('bg-neutral-950/80');
       }
     }
-  
+
     window.addEventListener('scroll', updateHeaderOnScroll);
     updateHeaderOnScroll();
-  
-    // Service cards accordion
+
     const serviceCards = document.querySelectorAll('.service-card');
-  
+
     serviceCards.forEach(card => {
       card.addEventListener('click', () => {
         const isOpen = card.getAttribute('aria-expanded') === 'true';
-  
+
         serviceCards.forEach(otherCard => {
           otherCard.setAttribute('aria-expanded', 'false');
           otherCard.classList.remove('bg-white/10', 'border-white/20');
@@ -403,10 +448,9 @@
           const otherIcon = otherCard.querySelector('.service-icon');
           otherContent.classList.remove('grid-rows-[1fr]');
           otherContent.classList.add('grid-rows-[0fr]');
-          otherIcon.textContent = '+';
           otherIcon.classList.remove('rotate-45');
         });
-  
+
         if (!isOpen) {
           card.setAttribute('aria-expanded', 'true');
           card.classList.add('bg-white/10', 'border-white/20');
@@ -414,34 +458,32 @@
           const icon = card.querySelector('.service-icon');
           content.classList.remove('grid-rows-[0fr]');
           content.classList.add('grid-rows-[1fr]');
-          icon.textContent = '+';
           icon.classList.add('rotate-45');
         }
       });
     });
-  
-    // Contact Panel
+
     const openBtn = document.getElementById('open-contact');
     const openEmailBtn = document.getElementById('open-contact-email');
     const panel = document.getElementById('panel');
     const wrapper = document.getElementById('contact-panel');
     const closeBtn = document.getElementById('close-panel');
     const backdrop = document.getElementById('contact-backdrop');
-  
+
     function openPanel() {
       wrapper.classList.remove('hidden');
       setTimeout(() => {
         panel.classList.remove('translate-y-full');
       }, 10);
     }
-  
+
     function closePanel() {
       panel.classList.add('translate-y-full');
       setTimeout(() => {
         wrapper.classList.add('hidden');
       }, 300);
     }
-  
+
     openBtn.addEventListener('click', openPanel);
     openEmailBtn.addEventListener('click', openPanel);
     closeBtn.addEventListener('click', closePanel);
