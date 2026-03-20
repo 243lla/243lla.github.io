@@ -9,24 +9,11 @@
 
 <body class="bg-neutral-950 text-white">
 
-<!-- Header -->
-<header id="site-header" class="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-neutral-950/80 backdrop-blur transition-all duration-300">
-    <div id="header-inner" class="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 transition-all duration-300">
-      <a href="#home" class="flex items-center gap-4">
-        <img
-          id="site-logo"
-          src="MJB logo.png"
-          alt="MJB Logo"
-          class="h-12 w-auto transition-all duration-300 md:h-14"
-        >
-        <span
-          id="site-brand"
-          class="text-base font-semibold tracking-[0.14em] text-white transition-all duration-300 md:text-lg"
-        >
-          MITRAJAYA BAHARI
-        </span>
-      </a>
-  
+  <!-- Header -->
+  <header class="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-neutral-950/80 backdrop-blur">
+    <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+      <a href="#home" class="text-sm font-semibold uppercase tracking-[0.2em]">MJB</a>
+
       <nav class="hidden items-center gap-8 text-sm text-white/70 md:flex">
         <a href="#home" class="hover:text-white">Home</a>
         <a href="#about" class="hover:text-white">About</a>
@@ -34,17 +21,14 @@
         <a href="#location" class="hover:text-white">Location</a>
         <a href="#contact" class="hover:text-white">Contact</a>
       </nav>
-  
-      <a
-        href="#contact"
-        class="hidden rounded-full bg-white px-5 py-2 text-sm font-medium text-neutral-950 transition-all duration-300 md:inline-block"
-      >
+
+      <a href="#contact" class="hidden md:inline-block rounded-full bg-white px-5 py-2 text-sm font-medium text-neutral-950">
         Contact Us
       </a>
-  
+
       <button id="menu-btn" class="text-2xl md:hidden">☰</button>
     </div>
-  
+
     <!-- Mobile Menu -->
     <div id="mobile-menu" class="hidden border-t border-white/10 bg-neutral-950 md:hidden">
       <nav class="flex flex-col space-y-4 px-6 py-6 text-sm text-white/70">
@@ -56,6 +40,7 @@
       </nav>
     </div>
   </header>
+
   <!-- Hero -->
   <section id="home" class="relative min-h-screen scroll-mt-24">
     <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1494412519320-aa613dfb7738')] bg-cover bg-center"></div>
@@ -326,22 +311,17 @@
     const menuBtn = document.getElementById('menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
     const mobileLinks = document.querySelectorAll('.mobile-link');
-  
-    const siteHeader = document.getElementById('site-header');
-    const headerInner = document.getElementById('header-inner');
-    const siteLogo = document.getElementById('site-logo');
-    const siteBrand = document.getElementById('site-brand');
-  
+
     function closeMobileMenu() {
       mobileMenu.classList.add('hidden');
       menuBtn.textContent = '☰';
     }
-  
+
     function openMobileMenu() {
       mobileMenu.classList.remove('hidden');
       menuBtn.textContent = '✕';
     }
-  
+
     menuBtn.addEventListener('click', () => {
       if (mobileMenu.classList.contains('hidden')) {
         openMobileMenu();
@@ -349,53 +329,20 @@
         closeMobileMenu();
       }
     });
-  
+
     mobileLinks.forEach(link => {
       link.addEventListener('click', () => {
         closeMobileMenu();
       });
     });
-  
-    function updateHeaderOnScroll() {
-      const isScrolled = window.scrollY > 24;
-  
-      if (isScrolled) {
-        headerInner.classList.remove('py-5');
-        headerInner.classList.add('py-3');
-  
-        siteLogo.classList.remove('h-12', 'md:h-14');
-        siteLogo.classList.add('h-9', 'md:h-10');
-  
-        siteBrand.classList.remove('text-base', 'md:text-lg', 'tracking-[0.14em]');
-        siteBrand.classList.add('text-sm', 'md:text-base', 'tracking-[0.1em]');
-  
-        siteHeader.classList.remove('bg-neutral-950/80');
-        siteHeader.classList.add('bg-neutral-950/90');
-      } else {
-        headerInner.classList.remove('py-3');
-        headerInner.classList.add('py-5');
-  
-        siteLogo.classList.remove('h-9', 'md:h-10');
-        siteLogo.classList.add('h-12', 'md:h-14');
-  
-        siteBrand.classList.remove('text-sm', 'md:text-base', 'tracking-[0.1em]');
-        siteBrand.classList.add('text-base', 'md:text-lg', 'tracking-[0.14em]');
-  
-        siteHeader.classList.remove('bg-neutral-950/90');
-        siteHeader.classList.add('bg-neutral-950/80');
-      }
-    }
-  
-    window.addEventListener('scroll', updateHeaderOnScroll);
-    updateHeaderOnScroll();
-  
+
     // Service cards accordion
     const serviceCards = document.querySelectorAll('.service-card');
-  
+
     serviceCards.forEach(card => {
       card.addEventListener('click', () => {
         const isOpen = card.getAttribute('aria-expanded') === 'true';
-  
+
         serviceCards.forEach(otherCard => {
           otherCard.setAttribute('aria-expanded', 'false');
           otherCard.classList.remove('bg-white/10', 'border-white/20');
@@ -406,7 +353,7 @@
           otherIcon.textContent = '+';
           otherIcon.classList.remove('rotate-45');
         });
-  
+
         if (!isOpen) {
           card.setAttribute('aria-expanded', 'true');
           card.classList.add('bg-white/10', 'border-white/20');
@@ -419,7 +366,7 @@
         }
       });
     });
-  
+
     // Contact Panel
     const openBtn = document.getElementById('open-contact');
     const openEmailBtn = document.getElementById('open-contact-email');
@@ -427,25 +374,26 @@
     const wrapper = document.getElementById('contact-panel');
     const closeBtn = document.getElementById('close-panel');
     const backdrop = document.getElementById('contact-backdrop');
-  
+
     function openPanel() {
       wrapper.classList.remove('hidden');
       setTimeout(() => {
         panel.classList.remove('translate-y-full');
       }, 10);
     }
-  
+
     function closePanel() {
       panel.classList.add('translate-y-full');
       setTimeout(() => {
         wrapper.classList.add('hidden');
       }, 300);
     }
-  
+
     openBtn.addEventListener('click', openPanel);
     openEmailBtn.addEventListener('click', openPanel);
     closeBtn.addEventListener('click', closePanel);
     backdrop.addEventListener('click', closePanel);
   </script>
+
 </body>
 </html>
