@@ -1,338 +1,383 @@
-/* =========================
-   GOOGLE ICON BASE
-========================= */
 .material-symbols-outlined {
-    font-variation-settings:
-      'FILL' 0,
-      'wght' 400,
-      'GRAD' 0,
-      'opsz' 24;
-    transition: transform 0.3s ease;
-    line-height: 1;
-    vertical-align: middle;
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24;
+  transition: transform 0.3s ease;
+  line-height: 1;
+  vertical-align: middle;
+}
+
+.theme-toggle:hover .material-symbols-outlined,
+.lang-toggle:hover .material-symbols-outlined {
+  transform: rotate(20deg);
+}
+
+:root {
+  --bg: #f7fbff;
+  --text: #0f172a;
+  --muted: #475569;
+  --muted-soft: #64748b;
+  --header-bg: rgba(255, 255, 255, 0.88);
+  --header-border: rgba(15, 23, 42, 0.08);
+  --surface: #ffffff;
+  --surface-soft: #edf4fb;
+  --card-bg: rgba(255, 255, 255, 0.95);
+  --card-border: rgba(15, 23, 42, 0.08);
+  --primary: #0b3b75;
+  --primary-hover: #0e4d98;
+  --primary-contrast: #ffffff;
+  --button-secondary-bg: transparent;
+  --button-secondary-border: rgba(255, 255, 255, 0.35);
+  --button-secondary-text: #ffffff;
+  --hero-overlay: rgba(8, 26, 56, 0.58);
+  --theme-backdrop: rgba(15, 23, 42, 0.45);
+  --panel-bg: #ffffff;
+  --panel-text: #0f172a;
+  --panel-muted: #64748b;
+  --panel-border: rgba(15, 23, 42, 0.1);
+  --contact-card-bg: rgba(255, 255, 255, 0.9);
+  --contact-card-border: rgba(15, 23, 42, 0.08);
+}
+
+body.dark-mode {
+  --bg: #0a0f1a;
+  --text: #ffffff;
+  --muted: rgba(255, 255, 255, 0.7);
+  --muted-soft: rgba(255, 255, 255, 0.5);
+  --header-bg: rgba(10, 15, 26, 0.88);
+  --header-border: rgba(255, 255, 255, 0.08);
+  --surface: #0a0f1a;
+  --surface-soft: #111827;
+  --card-bg: rgba(255, 255, 255, 0.05);
+  --card-border: rgba(255, 255, 255, 0.08);
+  --primary: #3b82f6;
+  --primary-hover: #60a5fa;
+  --button-secondary-bg: transparent;
+  --button-secondary-border: rgba(255, 255, 255, 0.2);
+  --button-secondary-text: #ffffff;
+  --hero-overlay: rgba(2, 6, 23, 0.72);
+  --theme-backdrop: rgba(0, 0, 0, 0.62);
+  --panel-bg: #111827;
+  --panel-text: #ffffff;
+  --panel-muted: rgba(255, 255, 255, 0.6);
+  --panel-border: rgba(255, 255, 255, 0.08);
+  --contact-card-bg: rgba(255, 255, 255, 0.04);
+  --contact-card-border: rgba(255, 255, 255, 0.08);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.theme-header {
+  background: var(--header-bg);
+  border-color: var(--header-border);
+  backdrop-filter: blur(16px);
+}
+
+.theme-text { color: var(--text); }
+.theme-muted { color: var(--muted); }
+.theme-muted-soft { color: var(--muted-soft); }
+.theme-surface { background: var(--surface); }
+.theme-link { color: var(--primary); }
+.theme-link:hover { text-decoration: underline; }
+.border-theme { border-color: var(--card-border); }
+
+.nav-link:hover,
+.mobile-link:hover {
+  color: var(--text);
+}
+
+.section-label {
+  color: var(--muted-soft);
+}
+
+.hero-overlay {
+  background: var(--hero-overlay);
+}
+
+.theme-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  backdrop-filter: blur(10px);
+}
+
+.theme-card-hover:hover {
+  background: color-mix(in srgb, var(--card-bg) 88%, var(--text) 4%);
+  border-color: color-mix(in srgb, var(--card-border) 70%, var(--text) 18%);
+}
+
+.theme-toggle,
+.lang-toggle {
+  border: 1px solid var(--card-border);
+  background: var(--card-bg);
+  color: var(--text);
+  transition: all 0.3s ease;
+}
+
+.theme-toggle:hover,
+.lang-toggle:hover {
+  border-color: var(--text);
+  transform: translateY(-1px);
+}
+
+.lang-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  white-space: nowrap;
+}
+
+.theme-primary-btn {
+  background: var(--primary);
+  color: var(--primary-contrast);
+}
+
+.theme-primary-btn:hover {
+  background: var(--primary-hover);
+}
+
+.theme-secondary-btn {
+  background: var(--button-secondary-bg);
+  border-color: var(--button-secondary-border);
+  color: var(--button-secondary-text);
+}
+
+.theme-backdrop {
+  background: var(--theme-backdrop);
+}
+
+.theme-panel {
+  background: var(--panel-bg);
+  color: var(--panel-text);
+  border-color: var(--panel-border);
+  box-shadow: 0 -20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.theme-panel-muted {
+  color: var(--panel-muted);
+}
+
+.panel-handle {
+  background: color-mix(in srgb, var(--text) 20%, transparent);
+}
+
+.theme-contact-card {
+  background: var(--contact-card-bg);
+  border: 1px solid var(--contact-card-border);
+}
+
+.client-card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 22px;
+  min-height: 110px;
+  border-radius: 20px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--card-border);
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  transition:
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.35s ease,
+    box-shadow 0.35s ease,
+    background 0.35s ease;
+}
+
+.client-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  background: radial-gradient(circle at top center, rgba(255, 255, 255, 0.08), transparent 60%);
+  opacity: 1;
+  transition: opacity 0.35s ease;
+}
+
+.client-logo {
+  position: relative;
+  z-index: 1;
+  max-height: 52px;
+  max-width: 100%;
+  width: auto;
+  object-fit: contain;
+  filter: none;
+  opacity: 1;
+  transition:
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.client-card:hover {
+  transform: translateY(-6px);
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(59, 130, 246, 0.35);
+  box-shadow:
+    0 18px 40px rgba(0, 0, 0, 0.28),
+    0 8px 20px rgba(59, 130, 246, 0.10),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.client-card:hover .client-logo {
+  transform: scale(1.05);
+}
+
+.theme-contact-bg {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #0b3b75 0%, #1d4ed8 100%);
+  box-shadow:
+    0 20px 50px rgba(15, 23, 42, 0.14),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.theme-contact-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  box-shadow:
+    0 20px 50px rgba(15, 23, 42, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+body.light-mode .theme-contact-bg::after {
+  opacity: 1;
+}
+
+.theme-contact-bg > * {
+  position: relative;
+  z-index: 1;
+}
+
+body.light-mode .theme-contact-bg,
+body.light-mode .theme-contact-bg h2,
+body.light-mode .theme-contact-bg p,
+body.light-mode .theme-contact-bg span {
+  color: #0f172a;
+}
+
+body.light-mode #open-contact {
+  background: var(--primary);
+  color: #fff;
+}
+
+body.light-mode #open-contact-email {
+  background: rgba(15, 23, 42, 0.05);
+  color: #0f172a;
+  border: 1px solid rgba(15, 23, 42, 0.12);
+}
+
+.language-dropdown {
+  position: relative;
+}
+
+.lang-caret {
+  font-size: 1.1rem;
+  transition: transform 0.25s ease;
+}
+
+.language-dropdown.is-open .lang-caret {
+  transform: rotate(180deg);
+}
+
+.lang-menu {
+  position: absolute;
+  top: calc(100% + 0.65rem);
+  right: 0;
+  min-width: 220px;
+  padding: 0.5rem;
+  border-radius: 18px;
+  border: 1px solid var(--card-border);
+  background: var(--surface);
+  box-shadow:
+    0 20px 40px rgba(15, 23, 42, 0.16),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  z-index: 80;
+}
+
+.lang-menu.hidden {
+  display: none;
+}
+
+.lang-option {
+  width: 100%;
+  display: block;
+  text-align: left;
+  padding: 0.8rem 0.95rem;
+  border-radius: 14px;
+  color: var(--text);
+  background: transparent;
+  border: 0;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.lang-option:hover {
+  background: color-mix(in srgb, var(--card-bg) 80%, var(--text) 6%);
+}
+
+.lang-option.is-active {
+  background: color-mix(in srgb, var(--primary) 14%, var(--surface) 86%);
+  color: var(--text);
+  font-weight: 600;
+}
+
+body.dark-mode .lang-menu {
+  background: var(--panel-bg);
+  border-color: var(--panel-border);
+}
+
+@media (max-width: 767px) {
+  #site-brand {
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
   }
-  
-  .theme-toggle:hover .material-symbols-outlined,
-  .lang-toggle:hover .material-symbols-outlined {
-    transform: rotate(20deg);
+
+  .language-dropdown {
+    width: fit-content;
   }
-  
-  /* =========================
-     THEME VARIABLES
-  ========================= */
-  :root {
-    --bg: #f7fbff;
-    --text: #0f172a;
-    --muted: #475569;
-    --muted-soft: #64748b;
-    --header-bg: rgba(255, 255, 255, 0.88);
-    --header-border: rgba(15, 23, 42, 0.08);
-    --surface: #ffffff;
-    --surface-soft: #edf4fb;
-    --card-bg: rgba(255, 255, 255, 0.95);
-    --card-border: rgba(15, 23, 42, 0.08);
-    --primary: #0b3b75;
-    --primary-hover: #0e4d98;
-    --primary-contrast: #ffffff;
-    --button-secondary-bg: transparent;
-    --button-secondary-border: rgba(255, 255, 255, 0.35);
-    --button-secondary-text: #ffffff;
-    --hero-overlay: rgba(8, 26, 56, 0.58);
-    --theme-backdrop: rgba(15, 23, 42, 0.45);
-    --panel-bg: #ffffff;
-    --panel-text: #0f172a;
-    --panel-muted: #64748b;
-    --panel-border: rgba(15, 23, 42, 0.1);
-    --contact-card-bg: rgba(255, 255, 255, 0.9);
-    --contact-card-border: rgba(15, 23, 42, 0.08);
+
+  .lang-menu {
+    right: auto;
+    left: 0;
+    min-width: 210px;
   }
-  
-  /* DARK MODE */
-  body.dark-mode {
-    --bg: #0a0f1a;
-    --text: #ffffff;
-    --muted: rgba(255, 255, 255, 0.7);
-    --muted-soft: rgba(255, 255, 255, 0.5);
-    --header-bg: rgba(10, 15, 26, 0.88);
-    --header-border: rgba(255, 255, 255, 0.08);
-    --surface: #0a0f1a;
-    --surface-soft: #111827;
-    --card-bg: rgba(255, 255, 255, 0.05);
-    --card-border: rgba(255, 255, 255, 0.08);
-    --primary: #3b82f6;
-    --primary-hover: #60a5fa;
-    --button-secondary-bg: transparent;
-    --button-secondary-border: rgba(255, 255, 255, 0.2);
-    --button-secondary-text: #ffffff;
-    --hero-overlay: rgba(2, 6, 23, 0.72);
-    --theme-backdrop: rgba(0, 0, 0, 0.62);
-    --panel-bg: #111827;
-    --panel-text: #ffffff;
-    --panel-muted: rgba(255, 255, 255, 0.6);
-    --panel-border: rgba(255, 255, 255, 0.08);
-    --contact-card-bg: rgba(255, 255, 255, 0.04);
-    --contact-card-border: rgba(255, 255, 255, 0.08);
-  }
-  
-  /* =========================
-     GLOBAL
-  ========================= */
-  body {
-    background: var(--bg);
-    color: var(--text);
-    transition: background 0.3s ease, color 0.3s ease;
-  }
-  
-  .theme-header {
-    background: var(--header-bg);
-    border-color: var(--header-border);
-  }
-  
-  .theme-text { color: var(--text); }
-  .theme-muted { color: var(--muted); }
-  .theme-muted-soft { color: var(--muted-soft); }
-  .theme-surface { background: var(--surface); }
-  .theme-link { color: var(--primary); }
-  .theme-link:hover { text-decoration: underline; }
-  .border-theme { border-color: var(--card-border); }
-  
-  .nav-link:hover,
-  .mobile-link:hover {
-    color: var(--text);
-  }
-  
-  .section-label {
-    color: var(--muted-soft);
-  }
-  
-  .hero-overlay {
-    background: var(--hero-overlay);
-  }
-  
-  /* =========================
-     COMPONENTS
-  ========================= */
-  .theme-card {
-    background: var(--card-bg);
-    border: 1px solid var(--card-border);
-  }
-  
-  .theme-card-hover:hover {
-    background: color-mix(in srgb, var(--card-bg) 88%, var(--text) 4%);
-    border-color: color-mix(in srgb, var(--card-border) 70%, var(--text) 18%);
-  }
-  
-  .theme-toggle,
-  .lang-toggle {
-    border: 1px solid var(--card-border);
-    background: var(--card-bg);
-    color: var(--text);
-    transition: all 0.3s ease;
-  }
-  
-  .theme-toggle:hover,
-  .lang-toggle:hover {
-    border-color: var(--text);
-    transform: translateY(-1px);
-  }
-  
-  .lang-toggle {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.45rem;
-    white-space: nowrap;
-  }
-  
-  .theme-primary-btn {
-    background: var(--primary);
-    color: var(--primary-contrast);
-  }
-  
-  .theme-primary-btn:hover {
-    background: var(--primary-hover);
-  }
-  
-  .theme-secondary-btn {
-    background: var(--button-secondary-bg);
-    border-color: var(--button-secondary-border);
-    color: var(--button-secondary-text);
-  }
-  
-  .theme-backdrop {
-    background: var(--theme-backdrop);
-  }
-  
-  .theme-panel {
-    background: var(--panel-bg);
-    color: var(--panel-text);
-    border-color: var(--panel-border);
-    box-shadow: 0 -20px 40px rgba(0, 0, 0, 0.2);
-  }
-  
-  .theme-panel-muted {
-    color: var(--panel-muted);
-  }
-  
-  .panel-handle {
-    background: color-mix(in srgb, var(--text) 20%, transparent);
-  }
-  
-  .theme-contact-card {
-    background: var(--contact-card-bg);
-    border: 1px solid var(--contact-card-border);
-  }
-  
-  /* =========================
-     CLIENTS
-  ========================= */
+}
+
+@media (max-width: 640px) {
   .client-card {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 22px;
-    min-height: 110px;
-    border-radius: 20px;
-    overflow: hidden;
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid var(--card-border);
-    box-shadow:
-      0 10px 30px rgba(0, 0, 0, 0.18),
-      inset 0 1px 0 rgba(255, 255, 255, 0.05);
-    transition:
-      transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
-      border-color 0.35s ease,
-      box-shadow 0.35s ease,
-      background 0.35s ease;
+    min-height: 96px;
+    padding: 18px;
+    border-radius: 16px;
   }
-  
-  .client-card::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    border-radius: inherit;
-    background: radial-gradient(
-      circle at top center,
-      rgba(255, 255, 255, 0.08),
-      transparent 60%
-    );
-    opacity: 1;
-    transition: opacity 0.35s ease;
-  }
-  
+
   .client-logo {
-    position: relative;
-    z-index: 1;
-    max-height: 52px;
-    max-width: 100%;
-    width: auto;
-    object-fit: contain;
-    filter: grayscale(100%) brightness(1.15) contrast(1.08);
-    opacity: 0.92;
-    transition:
-      transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
-      filter 0.35s ease,
-      opacity 0.35s ease;
+    max-height: 42px;
   }
-  
-  .client-card:hover {
-    transform: translateY(-6px);
-    background: rgba(255, 255, 255, 0.07);
-    border-color: rgba(59, 130, 246, 0.35);
-    box-shadow:
-      0 18px 40px rgba(0, 0, 0, 0.28),
-      0 8px 20px rgba(59, 130, 246, 0.10),
-      inset 0 1px 0 rgba(255, 255, 255, 0.08);
+
+  .lang-toggle {
+    gap: 0.35rem;
   }
-  
-  .client-card:hover .client-logo {
-    filter: grayscale(0%) brightness(1.05) contrast(1.05);
-    opacity: 1;
-    transform: scale(1.05);
+
+  .lang-toggle span:last-child {
+    font-size: 0.75rem;
   }
-  
-  /* =========================
-     CONTACT SECTION
-  ========================= */
-  .theme-contact-bg {
-    position: relative;
-    border-radius: 24px;
-    overflow: hidden;
-    background: linear-gradient(135deg, #0b3b75 0%, #1d4ed8 100%);
-    box-shadow:
-      0 20px 50px rgba(15, 23, 42, 0.14),
-      inset 0 1px 0 rgba(255, 255, 255, 0.08);
-  }
-  
-  .theme-contact-bg::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    pointer-events: none;
-    background: rgba(255, 255, 255, 0.88);
-    border: 1px solid rgba(15, 23, 42, 0.08);
-    box-shadow:
-      0 20px 50px rgba(15, 23, 42, 0.12),
-      inset 0 1px 0 rgba(255, 255, 255, 0.6);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-  
-  body.light-mode .theme-contact-bg::after {
-    opacity: 1;
-  }
-  
-  .theme-contact-bg > * {
-    position: relative;
-    z-index: 1;
-  }
-  
-  body.light-mode .theme-contact-bg,
-  body.light-mode .theme-contact-bg h2,
-  body.light-mode .theme-contact-bg p,
-  body.light-mode .theme-contact-bg span {
-    color: #0f172a;
-  }
-  
-  body.light-mode #open-contact {
-    background: var(--primary);
-    color: #fff;
-  }
-  
-  body.light-mode #open-contact-email {
-    background: rgba(15, 23, 42, 0.05);
-    color: #0f172a;
-    border: 1px solid rgba(15, 23, 42, 0.12);
-  }
-  
-  /* =========================
-     MOBILE
-  ========================= */
-  @media (max-width: 767px) {
-    #site-brand {
-      font-size: 0.8rem;
-      letter-spacing: 0.08em;
-    }
-  }
-  
-  @media (max-width: 640px) {
-    .client-card {
-      min-height: 96px;
-      padding: 18px;
-      border-radius: 16px;
-    }
-  
-    .client-logo {
-      max-height: 42px;
-    }
-  
-    .lang-toggle {
-      gap: 0.35rem;
-    }
-  
-    .lang-toggle span:last-child {
-      font-size: 0.75rem;
-    }
-  }
+}

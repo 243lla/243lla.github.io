@@ -1,408 +1,515 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PT MitraJaya Bahari</title>
+  <title>MJB - Integrated Logistics, Depot & Customs Solutions</title>
 
   <script src="https://cdn.tailwindcss.com"></script>
 
   <link
     rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=dark_mode,light_mode,translate"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
   />
 
   <link rel="stylesheet" href="styles.css" />
 </head>
+<body class="light-mode theme-surface theme-text antialiased">
 
-<body class="light-mode">
-  <!-- Header -->
-  <header id="site-header" class="theme-header fixed inset-x-0 top-0 z-50 border-b backdrop-blur transition-all duration-300">
-    <div id="header-inner" class="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 transition-all duration-300">
-      <a href="#home" class="flex items-center gap-4">
-        <img
-          id="site-logo"
-          src="MJB logo.png"
-          alt="MJB Logo"
-          class="h-12 w-auto transition-all duration-300 md:h-14"
-        >
-        <span
-          id="site-brand"
-          class="theme-text text-base font-semibold tracking-[0.14em] transition-all duration-300 md:text-lg"
-        >
-          MITRAJAYA BAHARI
-        </span>
-      </a>
+  <!-- HEADER -->
+  <header class="fixed top-0 inset-x-0 z-50 border-b theme-header">
+    <div id="header-inner" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 transition-all duration-300">
+      <div class="flex items-center justify-between gap-4">
+        <a href="#home" class="flex items-center gap-3 min-w-0">
+          <img
+            id="site-logo"
+            src="src/img/MJB logo.png"
+            alt="MJB Logo"
+            class="h-12 md:h-14 w-auto rounded-xl object-cover transition-all duration-300"
+          />
+          <div class="min-w-0">
+            <div
+              id="site-brand"
+              class="text-base md:text-lg font-semibold tracking-[0.14em] uppercase transition-all duration-300"
+            >
+              PT MITRAJAYA BAHARI
+            </div>
+            <p class="theme-muted text-xs md:text-sm">Belawan, North Sumatra</p>
+          </div>
+        </a>
 
-      <div class="hidden items-center gap-4 md:flex">
-        <nav class="flex items-center gap-8 text-sm theme-muted">
-          <a href="#home" class="nav-link transition" data-i18n="nav.home">Home</a>
-          <a href="#about" class="nav-link transition" data-i18n="nav.about">About</a>
-          <a href="#services" class="nav-link transition" data-i18n="nav.services">Services</a>
-          <a href="#location" class="nav-link transition" data-i18n="nav.location">Location</a>
-          <a href="#clients" class="nav-link transition" data-i18n="nav.clients">Clients</a>
-          <a href="#contact" class="nav-link transition" data-i18n="nav.contact">Contact</a>
+        <nav class="hidden md:flex items-center gap-6">
+          <a href="#home" class="nav-link theme-muted text-sm" data-i18n="nav.home">Home</a>
+          <a href="#about" class="nav-link theme-muted text-sm" data-i18n="nav.about">About</a>
+          <a href="#services" class="nav-link theme-muted text-sm" data-i18n="nav.services">Services</a>
+          <a href="#location" class="nav-link theme-muted text-sm" data-i18n="nav.location">Location</a>
+          <a href="#clients" class="nav-link theme-muted text-sm" data-i18n="nav.clients">Clients</a>
+          <a href="#contact" class="nav-link theme-muted text-sm" data-i18n="nav.contact">Contact</a>
         </nav>
 
-        <button
-          id="lang-toggle-desktop"
-          type="button"
-          class="lang-toggle rounded-full px-3 py-2 text-sm font-medium"
-          aria-label="Toggle language"
-        >
-          <span class="material-symbols-outlined">translate</span>
-          <span id="lang-label-desktop">中文</span>
-        </button>
+        <div class="hidden md:flex items-center gap-2">
+          <button
+            id="theme-toggle-desktop"
+            class="theme-toggle h-11 w-11 rounded-full inline-flex items-center justify-center"
+            type="button"
+            aria-label="Toggle theme"
+          >
+            <span id="theme-icon-desktop" class="material-symbols-outlined">dark_mode</span>
+          </button>
 
-        <button
-          id="theme-toggle-desktop"
-          type="button"
-          class="theme-toggle rounded-full p-2"
-          aria-label="Toggle theme"
-        >
-          <span class="material-symbols-outlined" id="theme-icon-desktop">dark_mode</span>
-        </button>
+          <div class="language-dropdown">
+            <button
+              id="lang-toggle-desktop"
+              class="lang-toggle h-11 px-4 rounded-full"
+              type="button"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              <span class="material-symbols-outlined">translate</span>
+              <span id="lang-current-desktop">English</span>
+              <span class="lang-caret">▾</span>
+            </button>
 
-        <a
-          href="#contact"
-          class="theme-primary-btn hidden rounded-full px-5 py-2 text-sm font-medium transition-all duration-300 md:inline-block"
-          data-i18n="cta.contactUs"
-        >
-          Contact Us
-        </a>
+            <div id="lang-menu-desktop" class="lang-menu hidden">
+              <button class="lang-option" type="button" data-lang="en">English</button>
+              <button class="lang-option" type="button" data-lang="zh">中文</button>
+              <button class="lang-option" type="button" data-lang="id">Bahasa Indonesia</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="md:hidden flex items-center gap-2">
+          <button
+            id="theme-toggle-mobile-top"
+            class="theme-toggle h-10 w-10 rounded-full inline-flex items-center justify-center"
+            type="button"
+            aria-label="Toggle theme"
+          >
+            <span id="theme-icon-mobile-top" class="material-symbols-outlined">dark_mode</span>
+          </button>
+
+          <div class="language-dropdown">
+            <button
+              id="lang-toggle-mobile-top"
+              class="lang-toggle h-10 px-3 rounded-full text-sm"
+              type="button"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              <span class="material-symbols-outlined text-[20px]">translate</span>
+              <span id="lang-current-mobile-top">English</span>
+              <span class="lang-caret">▾</span>
+            </button>
+
+            <div id="lang-menu-mobile-top" class="lang-menu hidden">
+              <button class="lang-option" type="button" data-lang="en">English</button>
+              <button class="lang-option" type="button" data-lang="zh">中文</button>
+              <button class="lang-option" type="button" data-lang="id">Bahasa Indonesia</button>
+            </div>
+          </div>
+
+          <button
+            id="menu-btn"
+            class="theme-toggle h-10 w-10 rounded-full text-lg inline-flex items-center justify-center"
+            type="button"
+            aria-label="Open menu"
+          >
+            ☰
+          </button>
+        </div>
       </div>
 
-      <div class="flex items-center gap-3 md:hidden">
-        <button
-          id="lang-toggle-mobile-top"
-          type="button"
-          class="lang-toggle rounded-full px-3 py-2 text-xs font-medium"
-          aria-label="Toggle language"
-        >
-          <span class="material-symbols-outlined">translate</span>
-          <span id="lang-label-mobile-top">中文</span>
-        </button>
+      <div id="mobile-menu" class="hidden md:hidden pt-4">
+        <div class="theme-card rounded-3xl p-4 flex flex-col gap-3">
+          <a href="#home" class="mobile-link theme-muted text-sm" data-i18n="nav.home">Home</a>
+          <a href="#about" class="mobile-link theme-muted text-sm" data-i18n="nav.about">About</a>
+          <a href="#services" class="mobile-link theme-muted text-sm" data-i18n="nav.services">Services</a>
+          <a href="#location" class="mobile-link theme-muted text-sm" data-i18n="nav.location">Location</a>
+          <a href="#clients" class="mobile-link theme-muted text-sm" data-i18n="nav.clients">Clients</a>
+          <a href="#contact" class="mobile-link theme-muted text-sm" data-i18n="nav.contact">Contact</a>
 
-        <button
-          id="theme-toggle-mobile-top"
-          type="button"
-          class="theme-toggle rounded-full p-2"
-          aria-label="Toggle theme"
-        >
-          <span class="material-symbols-outlined" id="theme-icon-mobile-top">dark_mode</span>
-        </button>
+          <div class="pt-2 border-t border-theme">
+            <div class="language-dropdown">
+              <button
+                id="lang-toggle-mobile-menu"
+                class="lang-toggle h-10 px-3 rounded-full text-sm"
+                type="button"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                <span class="material-symbols-outlined text-[20px]">translate</span>
+                <span id="lang-current-mobile-menu">English</span>
+                <span class="lang-caret">▾</span>
+              </button>
 
-        <button id="menu-btn" class="theme-text text-2xl">☰</button>
+              <div id="lang-menu-mobile-menu" class="lang-menu hidden">
+                <button class="lang-option" type="button" data-lang="en">English</button>
+                <button class="lang-option" type="button" data-lang="zh">中文</button>
+                <button class="lang-option" type="button" data-lang="id">Bahasa Indonesia</button>
+              </div>
+            </div>
+          </div>
+
+          <button
+            id="theme-toggle-mobile-menu"
+            class="theme-toggle h-10 px-4 rounded-full inline-flex items-center justify-center gap-2 self-start"
+            type="button"
+            aria-label="Toggle theme"
+          >
+            <span id="theme-icon-mobile-menu" class="material-symbols-outlined">dark_mode</span>
+            <span>Theme</span>
+          </button>
+        </div>
       </div>
-    </div>
-
-    <!-- Mobile Menu -->
-    <div id="mobile-menu" class="theme-surface hidden border-t border-theme md:hidden">
-      <nav class="flex flex-col space-y-4 px-6 py-6 text-sm theme-muted">
-        <a href="#home" class="mobile-link transition" data-i18n="nav.home">Home</a>
-        <a href="#about" class="mobile-link transition" data-i18n="nav.about">About</a>
-        <a href="#services" class="mobile-link transition" data-i18n="nav.services">Services</a>
-        <a href="#location" class="mobile-link transition" data-i18n="nav.location">Location</a>
-        <a href="#clients" class="mobile-link transition" data-i18n="nav.clients">Clients</a>
-        <a href="#contact" class="mobile-link transition" data-i18n="nav.contact">Contact</a>
-
-        <button
-          id="lang-toggle-mobile-menu"
-          type="button"
-          class="lang-toggle mt-2 rounded-full px-4 py-2 text-sm font-medium"
-          aria-label="Toggle language"
-        >
-          <span class="material-symbols-outlined">translate</span>
-          <span id="lang-label-mobile-menu">中文</span>
-        </button>
-
-        <button
-          id="theme-toggle-mobile-menu"
-          type="button"
-          class="theme-toggle mt-2 rounded-full p-2"
-          aria-label="Toggle theme"
-        >
-          <span class="material-symbols-outlined" id="theme-icon-mobile-menu">dark_mode</span>
-        </button>
-      </nav>
     </div>
   </header>
 
-  <!-- Hero -->
-  <section id="home" class="relative min-h-screen scroll-mt-24">
-    <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1494412519320-aa613dfb7738')] bg-cover bg-center"></div>
+  <!-- HERO -->
+  <section
+    id="home"
+    class="relative min-h-screen flex items-center"
+    style="background-image: url('src/img/MJB office image.jpg'); background-size: cover; background-position: center;"
+  >
     <div class="hero-overlay absolute inset-0"></div>
-
-    <div class="relative mx-auto flex min-h-screen max-w-7xl items-center px-6 pt-32">
-      <div class="max-w-4xl text-white">
-        <h1 class="text-5xl font-semibold md:text-7xl" data-i18n="hero.title">
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pt-32 pb-20">
+      <div class="max-w-3xl text-white">
+        <p class="uppercase tracking-[0.22em] text-xs md:text-sm text-white/70 mb-5">MJB Logistics</p>
+        <h1 class="text-4xl md:text-6xl font-semibold leading-tight mb-6" data-i18n="hero.title">
           Integrated Logistics, Depot & Customs Solutions
         </h1>
-        <p class="mt-6 max-w-2xl text-white/80" data-i18n="hero.desc">
-          Supporting reliable cargo movement through container depot, ISO tank depot,
-          transportation, customs brokerage, and warehousing services.
+        <p class="text-base md:text-lg text-white/80 max-w-2xl mb-8" data-i18n="hero.desc">
+          Supporting reliable cargo movement through container depot, ISO tank depot, transportation, customs brokerage, and warehousing services.
         </p>
 
-        <div class="mt-10 flex flex-wrap gap-4">
-          <a href="#contact" class="theme-primary-btn rounded-full px-6 py-3 transition hover:bg-blue-400" data-i18n="cta.contactUs">Contact Us</a>
-          <a href="#services" class="theme-secondary-btn rounded-full border px-6 py-3 transition hover:bg-white/10" data-i18n="cta.exploreServices">Explore Services</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Services -->
-  <section id="services" class="mx-auto max-w-7xl scroll-mt-24 px-6 py-24">
-    <h2 class="theme-text mb-4 text-4xl font-semibold" data-i18n="services.title">Services</h2>
-    <p class="theme-muted mb-10 max-w-2xl" data-i18n="services.intro">
-      Select a service to view more details about our operational capabilities.
-    </p>
-
-    <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-      <button type="button" class="service-card theme-card theme-card-hover group rounded-3xl border p-8 text-left transition" aria-expanded="false">
-        <div class="flex items-start justify-between gap-4">
-          <h3 class="theme-text text-xl font-semibold" data-i18n="services.containerDepot.title">Container Depot</h3>
-          <span class="service-icon theme-muted text-2xl leading-none transition-transform duration-300">+</span>
-        </div>
-        <div class="service-content grid grid-rows-[0fr] transition-all duration-500 ease-out">
-          <div class="overflow-hidden">
-            <p class="theme-muted pt-4 text-sm leading-7" data-i18n="services.containerDepot.desc">
-              Our depot offers secure and efficient container storage and maintenance.
-            </p>
-          </div>
-        </div>
-      </button>
-
-      <button type="button" class="service-card theme-card theme-card-hover group rounded-3xl border p-8 text-left transition" aria-expanded="false">
-        <div class="flex items-start justify-between gap-4">
-          <h3 class="theme-text text-xl font-semibold" data-i18n="services.isoTank.title">ISO Tank Depot</h3>
-          <span class="service-icon theme-muted text-2xl leading-none transition-transform duration-300">+</span>
-        </div>
-        <div class="service-content grid grid-rows-[0fr] transition-all duration-500 ease-out">
-          <div class="overflow-hidden">
-            <p class="theme-muted pt-4 text-sm leading-7" data-i18n="services.isoTank.desc">
-              Specialized storage and maintenance for ISO tanks.
-            </p>
-          </div>
-        </div>
-      </button>
-
-      <button type="button" class="service-card theme-card theme-card-hover group rounded-3xl border p-8 text-left transition" aria-expanded="false">
-        <div class="flex items-start justify-between gap-4">
-          <h3 class="theme-text text-xl font-semibold" data-i18n="services.trucking.title">Trucking & Transportation</h3>
-          <span class="service-icon theme-muted text-2xl leading-none transition-transform duration-300">+</span>
-        </div>
-        <div class="service-content grid grid-rows-[0fr] transition-all duration-500 ease-out">
-          <div class="overflow-hidden">
-            <p class="theme-muted pt-4 text-sm leading-7" data-i18n="services.trucking.desc">
-              Reliable trucking and transportation services for goods and containers.
-            </p>
-          </div>
-        </div>
-      </button>
-
-      <button type="button" class="service-card theme-card theme-card-hover group rounded-3xl border p-8 text-left transition" aria-expanded="false">
-        <div class="flex items-start justify-between gap-4">
-          <h3 class="theme-text text-xl font-semibold" data-i18n="services.customs.title">Customs Brokerage</h3>
-          <span class="service-icon theme-muted text-2xl leading-none transition-transform duration-300">+</span>
-        </div>
-        <div class="service-content grid grid-rows-[0fr] transition-all duration-500 ease-out">
-          <div class="overflow-hidden">
-            <p class="theme-muted pt-4 text-sm leading-7" data-i18n="services.customs.desc">
-              Expert customs clearance and documentation handling.
-            </p>
-          </div>
-        </div>
-      </button>
-
-      <button type="button" class="service-card theme-card theme-card-hover group rounded-3xl border p-8 text-left transition" aria-expanded="false">
-        <div class="flex items-start justify-between gap-4">
-          <h3 class="theme-text text-xl font-semibold" data-i18n="services.logistics.title">Logistics</h3>
-          <span class="service-icon theme-muted text-2xl leading-none transition-transform duration-300">+</span>
-        </div>
-        <div class="service-content grid grid-rows-[0fr] transition-all duration-500 ease-out">
-          <div class="overflow-hidden">
-            <p class="theme-muted pt-4 text-sm leading-7" data-i18n="services.logistics.desc">
-              Complete logistics option.
-            </p>
-          </div>
-        </div>
-      </button>
-
-      <button type="button" class="service-card theme-card theme-card-hover group rounded-3xl border p-8 text-left transition" aria-expanded="false">
-        <div class="flex items-start justify-between gap-4">
-          <h3 class="theme-text text-xl font-semibold" data-i18n="services.warehousing.title">Warehousing</h3>
-          <span class="service-icon theme-muted text-2xl leading-none transition-transform duration-300">+</span>
-        </div>
-        <div class="service-content grid grid-rows-[0fr] transition-all duration-500 ease-out">
-          <div class="overflow-hidden">
-            <p class="theme-muted pt-4 text-sm leading-7" data-i18n="services.warehousing.desc">
-              Complete warehouse storage options.
-            </p>
-          </div>
-        </div>
-      </button>
-    </div>
-  </section>
-
-  <!-- About -->
-  <section id="about" class="mx-auto grid max-w-7xl scroll-mt-24 gap-12 px-6 py-24 lg:grid-cols-2">
-    <div>
-      <p class="section-label text-sm uppercase tracking-[0.28em]" data-i18n="about.label">About</p>
-      <h2 class="theme-text mt-4 text-4xl font-semibold" data-i18n="about.title">Decades of experience supporting international trade</h2>
-      <p class="theme-muted mt-6 max-w-xl text-lg leading-8" data-i18n="about.desc">
-        Founded in 1985, MJB has expanded from freight forwarding and customs services
-        into depot, isotank and logistics operations to support evolving cargo demands.
-      </p>
-    </div>
-
-    <div class="grid gap-4">
-      <div class="theme-card rounded-3xl border p-6">
-        <div class="theme-muted-soft text-sm">1985</div>
-        <div class="theme-text mt-2 text-xl font-semibold" data-i18n="about.founded">Founded</div>
-      </div>
-
-      <div class="theme-card rounded-3xl border p-6">
-        <div class="theme-muted-soft text-sm">1995</div>
-        <div class="theme-text mt-2 text-xl font-semibold" data-i18n="about.expanded">Expanded into Container Depot Services</div>
-      </div>
-
-      <div class="theme-card rounded-3xl border p-6">
-        <div class="theme-muted-soft text-sm">2018</div>
-        <div class="theme-text mt-2 text-xl font-semibold" data-i18n="about.isotank">Established Isotank Depot Capability</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Location -->
-  <section id="location" class="mx-auto max-w-7xl scroll-mt-24 px-6 py-24">
-    <div class="grid items-center gap-12 lg:grid-cols-2">
-      <div>
-        <p class="section-label text-sm uppercase tracking-[0.28em]" data-i18n="location.label">Location</p>
-        <h2 class="theme-text mt-4 text-4xl font-semibold" data-i18n="location.title">Strategically located in Belawan</h2>
-
-        <p class="theme-muted mt-6 max-w-xl" data-i18n="location.desc">
-          Our operations are based in Belawan, North Sumatra — one of Indonesia’s key
-          port areas, enabling efficient access to international shipping routes,
-          container handling, and logistics infrastructure.
-        </p>
-
-        <div class="mt-8 space-y-3">
-          <p class="theme-text"><strong data-i18n="location.depot">Belawan Depot</strong></p>
-          <p class="theme-muted" data-i18n="location.address">
-            Jalan Raya Pelabuhan Gabion, Belawan<br>
-            North Sumatra, Indonesia
-          </p>
-
+        <div class="flex flex-wrap gap-3">
           <a
-            href="https://maps.google.com/?q=Belawan+North+Sumatra"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="theme-link mt-4 inline-block"
-            data-i18n="location.map"
+            href="#contact"
+            class="theme-primary-btn px-6 py-3 rounded-full font-medium inline-flex items-center justify-center"
+            data-i18n="cta.contactUs"
           >
-            View on Google Maps →
+            Contact Us
+          </a>
+          <a
+            href="#services"
+            class="theme-secondary-btn border px-6 py-3 rounded-full font-medium inline-flex items-center justify-center"
+            data-i18n="cta.exploreServices"
+          >
+            Explore Services
           </a>
         </div>
       </div>
+    </div>
+  </section>
 
-      <div class="h-[400px] w-full overflow-hidden rounded-3xl border border-theme">
-        <iframe
-          src="https://maps.google.com/maps?q=Belawan%20North%20Sumatra&t=&z=13&ie=UTF8&iwloc=&output=embed"
-          class="h-full w-full border-0"
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-        ></iframe>
+  <!-- SERVICES -->
+  <section id="services" class="py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-2xl mb-10">
+        <p class="section-label uppercase tracking-[0.24em] text-xs mb-4" data-i18n="services.title">Services</p>
+        <h2 class="text-3xl md:text-4xl font-semibold mb-4" data-i18n="services.title">Services</h2>
+        <p class="theme-muted" data-i18n="services.intro">
+          Select a service to view more details about our operational capabilities.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-5">
+        <button class="service-card theme-card theme-card-hover text-left rounded-3xl p-6 transition-all duration-300" type="button" aria-expanded="false">
+          <div class="flex items-start justify-between gap-4">
+            <div>
+              <h3 class="text-xl font-semibold mb-2" data-i18n="services.containerDepot.title">Container Depot</h3>
+              <p class="theme-muted" data-i18n="services.containerDepot.desc">Our depot offers secure and efficient container storage and maintenance.</p>
+            </div>
+            <span class="service-icon material-symbols-outlined transition-transform duration-300">add</span>
+          </div>
+          <div class="service-content grid grid-rows-[0fr] transition-all duration-300">
+            <div class="overflow-hidden">
+              <p class="theme-muted pt-5">
+                Container inspection, repair coordination, yard handling, storage management, and operational support near port access.
+              </p>
+            </div>
+          </div>
+        </button>
+
+        <button class="service-card theme-card theme-card-hover text-left rounded-3xl p-6 transition-all duration-300" type="button" aria-expanded="false">
+          <div class="flex items-start justify-between gap-4">
+            <div>
+              <h3 class="text-xl font-semibold mb-2" data-i18n="services.isoTank.title">ISO Tank Depot</h3>
+              <p class="theme-muted" data-i18n="services.isoTank.desc">Specialized storage and maintenance for ISO tanks.</p>
+            </div>
+            <span class="service-icon material-symbols-outlined transition-transform duration-300">add</span>
+          </div>
+          <div class="service-content grid grid-rows-[0fr] transition-all duration-300">
+            <div class="overflow-hidden">
+              <p class="theme-muted pt-5">
+                Dedicated ISO tank handling, storage coordination, support services, and depot processes aligned with industrial cargo needs.
+              </p>
+            </div>
+          </div>
+        </button>
+
+        <button class="service-card theme-card theme-card-hover text-left rounded-3xl p-6 transition-all duration-300" type="button" aria-expanded="false">
+          <div class="flex items-start justify-between gap-4">
+            <div>
+              <h3 class="text-xl font-semibold mb-2" data-i18n="services.trucking.title">Trucking & Transportation</h3>
+              <p class="theme-muted" data-i18n="services.trucking.desc">Reliable trucking and transportation services for goods and containers.</p>
+            </div>
+            <span class="service-icon material-symbols-outlined transition-transform duration-300">add</span>
+          </div>
+          <div class="service-content grid grid-rows-[0fr] transition-all duration-300">
+            <div class="overflow-hidden">
+              <p class="theme-muted pt-5">
+                Inland delivery coordination, container movement, cargo transfers, and dependable transport support for port-related logistics.
+              </p>
+            </div>
+          </div>
+        </button>
+
+        <button class="service-card theme-card theme-card-hover text-left rounded-3xl p-6 transition-all duration-300" type="button" aria-expanded="false">
+          <div class="flex items-start justify-between gap-4">
+            <div>
+              <h3 class="text-xl font-semibold mb-2" data-i18n="services.customs.title">Customs Brokerage</h3>
+              <p class="theme-muted" data-i18n="services.customs.desc">Expert customs clearance and documentation handling.</p>
+            </div>
+            <span class="service-icon material-symbols-outlined transition-transform duration-300">add</span>
+          </div>
+          <div class="service-content grid grid-rows-[0fr] transition-all duration-300">
+            <div class="overflow-hidden">
+              <p class="theme-muted pt-5">
+                Import-export documentation support, compliance coordination, customs processing, and shipment release assistance.
+              </p>
+            </div>
+          </div>
+        </button>
+
+        <button class="service-card theme-card theme-card-hover text-left rounded-3xl p-6 transition-all duration-300" type="button" aria-expanded="false">
+          <div class="flex items-start justify-between gap-4">
+            <div>
+              <h3 class="text-xl font-semibold mb-2" data-i18n="services.logistics.title">Logistics</h3>
+              <p class="theme-muted" data-i18n="services.logistics.desc">Complete logistics option.</p>
+            </div>
+            <span class="service-icon material-symbols-outlined transition-transform duration-300">add</span>
+          </div>
+          <div class="service-content grid grid-rows-[0fr] transition-all duration-300">
+            <div class="overflow-hidden">
+              <p class="theme-muted pt-5">
+                End-to-end cargo coordination, scheduling support, depot integration, and transport workflow management.
+              </p>
+            </div>
+          </div>
+        </button>
+
+        <button class="service-card theme-card theme-card-hover text-left rounded-3xl p-6 transition-all duration-300" type="button" aria-expanded="false">
+          <div class="flex items-start justify-between gap-4">
+            <div>
+              <h3 class="text-xl font-semibold mb-2" data-i18n="services.warehousing.title">Warehousing</h3>
+              <p class="theme-muted" data-i18n="services.warehousing.desc">Complete warehouse storage options.</p>
+            </div>
+            <span class="service-icon material-symbols-outlined transition-transform duration-300">add</span>
+          </div>
+          <div class="service-content grid grid-rows-[0fr] transition-all duration-300">
+            <div class="overflow-hidden">
+              <p class="theme-muted pt-5">
+                Short-term and longer-term cargo storage, handling support, and organized warehousing for operational flexibility.
+              </p>
+            </div>
+          </div>
+        </button>
       </div>
     </div>
   </section>
 
-  <!-- Clients -->
-  <section id="clients" class="mx-auto max-w-7xl scroll-mt-24 px-6 py-24">
-    <div class="mb-12 text-center">
-      <p class="section-label text-sm uppercase tracking-[0.28em]" data-i18n="clients.label">Clients</p>
-      <h2 class="theme-text mt-4 text-4xl font-semibold" data-i18n="clients.title">Trusted by our partners</h2>
-      <p class="theme-muted mx-auto mt-4 max-w-2xl" data-i18n="clients.desc">
-        We work with a range of clients across logistics, shipping, and industrial sectors.
-      </p>
-    </div>
+  <!-- ABOUT -->
+  <section id="about" class="py-20 theme-surface">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <p class="section-label uppercase tracking-[0.24em] text-xs mb-4" data-i18n="about.label">About</p>
+          <h2 class="text-3xl md:text-4xl font-semibold mb-5" data-i18n="about.title">
+            Decades of experience supporting international trade
+          </h2>
+          <p class="theme-muted text-base leading-7 mb-8" data-i18n="about.desc">
+            Founded in 1985, MJB has expanded from freight forwarding and customs services into depot, isotank and logistics operations to support evolving cargo demands.
+          </p>
 
-    <div class="grid grid-cols-2 items-center gap-6 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
-      <div class="client-card"><img src="ctp-line.jpg" alt="CTP Line" class="client-logo"></div>
-      <div class="client-card"><img src="makhor.jpg" alt="Makhor" class="client-logo"></div>
-      <div class="client-card"><img src="mtt-shipping.jpg" alt="MTT Shipping" class="client-logo"></div>
-      <div class="client-card"><img src="cma-cgm.png" alt="CMA CGM" class="client-logo"></div>
-      <div class="client-card"><img src="florens.png" alt="Florens" class="client-logo"></div>
-      <div class="client-card"><img src="osl.png" alt="OSL" class="client-logo"></div>
-      <div class="client-card"><img src="seaco.jpg" alt="Seaco" class="client-logo"></div>
-      <div class="client-card"><img src="textainer.jpg" alt="Textainer" class="client-logo"></div>
-      <div class="client-card"><img src="tslines.jpg" alt="TS Lines" class="client-logo"></div>
-      <div class="client-card"><img src="vertex.jpg" alt="Vertex" class="client-logo"></div>
-      <div class="client-card"><img src="wanhai.png" alt="Wan Hai" class="client-logo"></div>
-    </div>
-  </section>
+          <div class="grid sm:grid-cols-3 gap-4">
+            <div class="theme-card rounded-3xl p-5">
+              <div class="text-2xl font-semibold mb-2">1985</div>
+              <div class="theme-muted text-sm" data-i18n="about.founded">Founded</div>
+            </div>
+            <div class="theme-card rounded-3xl p-5">
+              <div class="text-2xl font-semibold mb-2">2000s</div>
+              <div class="theme-muted text-sm" data-i18n="about.expanded">Expanded into Container Depot Services</div>
+            </div>
+            <div class="theme-card rounded-3xl p-5">
+              <div class="text-2xl font-semibold mb-2">2018</div>
+              <div class="theme-muted text-sm" data-i18n="about.isotank">Established Isotank Depot Capability</div>
+            </div>
+          </div>
+        </div>
 
-  <!-- Contact -->
-  <section id="contact" class="mx-auto max-w-7xl scroll-mt-24 px-6 py-24">
-    <div class="theme-contact-bg rounded-3xl p-10 text-white">
-      <h2 class="text-3xl font-semibold" data-i18n="contact.title">Need a logistics partner?</h2>
-
-      <div class="mt-6 flex flex-wrap gap-4">
-        <button id="open-contact" class="rounded-full bg-white px-6 py-3 text-black" data-i18n="contact.callUs">
-          Call Us
-        </button>
-
-        <button id="open-contact-email" class="rounded-full border border-white px-6 py-3 text-white" data-i18n="contact.emailUs">
-          Email Us
-        </button>
+        <div class="theme-card rounded-[2rem] p-3">
+          <img
+            src="src\img\MJB container image.jpg"
+            alt="Logistics operations"
+            class="w-full h-[420px] object-cover rounded-[1.5rem]"
+          />
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Contact Panel -->
-  <div id="contact-panel" class="fixed inset-0 z-50 hidden">
-    <div id="contact-backdrop" class="theme-backdrop absolute inset-0 backdrop-blur-sm"></div>
+  <!-- LOCATION -->
+  <section id="location" class="py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-10 items-start">
+        <div>
+          <p class="section-label uppercase tracking-[0.24em] text-xs mb-4" data-i18n="location.label">Location</p>
+          <h2 class="text-3xl md:text-4xl font-semibold mb-5" data-i18n="location.title">
+            Strategically located in Belawan
+          </h2>
+          <p class="theme-muted leading-7 mb-8" data-i18n="location.desc">
+            Our operations are based in Belawan, North Sumatra — one of Indonesia’s key port areas, enabling efficient access to international shipping routes, container handling, and logistics infrastructure.
+          </p>
+
+          <div class="theme-card rounded-3xl p-6">
+            <h3 class="text-xl font-semibold mb-3" data-i18n="location.depot">Belawan Depot</h3>
+            <p class="theme-muted mb-4" data-i18n="location.address">
+              Jalan Raya Pelabuhan Gabion, Belawan<br>North Sumatra, Indonesia
+            </p>
+            <a
+              href="https://maps.google.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="theme-link font-medium"
+              data-i18n="location.map"
+            >
+              View on Google Maps →
+            </a>
+          </div>
+        </div>
+
+        <div class="theme-card rounded-[2rem] p-3">
+          <iframe
+            title="Belawan map"
+            class="w-full h-[420px] rounded-[1.5rem]"
+            src="https://www.google.com/maps?q=Belawan%20North%20Sumatra%20Indonesia&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLIENTS -->
+  <section id="clients" class="py-20 theme-surface">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-2xl mb-10">
+        <p class="section-label uppercase tracking-[0.24em] text-xs mb-4" data-i18n="clients.label">Clients</p>
+        <h2 class="text-3xl md:text-4xl font-semibold mb-4" data-i18n="clients.title">Trusted by our partners</h2>
+        <p class="theme-muted" data-i18n="clients.desc">
+          We work with a range of clients across logistics, shipping, and industrial sectors.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5 justify-items-center">
+        <div class="client-card"><img class="client-logo" src="src/img/cma-cgm.png" alt="CMA CGM" /></div>
+        <div class="client-card"><img class="client-logo" src="src/img/ctp-line.jpg" alt="CTP Line" /></div>
+        <div class="client-card"><img class="client-logo" src="src/img/florens.png" alt="Florens" /></div>
+        <div class="client-card"><img class="client-logo" src="src/img/makhor.jpg" alt="Makhor" /></div>
+        <div class="client-card"><img class="client-logo" src="src/img/mtt-shipping.jpg" alt="MTT Shipping" /></div>
+      
+        <div class="client-card"><img class="client-logo" src="src/img/osl.png" alt="OSL" /></div>
+        <div class="client-card"><img class="client-logo" src="src/img/seaco.jpg" alt="Seaco" /></div>
+        <div class="client-card"><img class="client-logo" src="src/img/textainer.jpg" alt="Textainer" /></div>
+        <div class="client-card"><img class="client-logo" src="src/img/tslines.jpg" alt="TS Lines" /></div>
+        <div class="client-card"><img class="client-logo" src="src/img/vertex.jpg" alt="Vertex" /></div>
+      
+        <div class="client-card"><img class="client-logo" src="src/img/wanhai.png" alt="Wan Hai" /></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="theme-contact-bg p-8 md:p-12 text-white">
+        <div class="max-w-3xl">
+          <h2 class="text-3xl md:text-4xl font-semibold mb-4" data-i18n="contact.title">Need a logistics partner?</h2>
+          <p class="opacity-80 mb-8">
+            Reach out to our team for depot, transport, warehousing, and customs support.
+          </p>
+
+          <div class="flex flex-wrap gap-3">
+            <button
+              id="open-contact"
+              type="button"
+              class="px-6 py-3 rounded-full font-medium bg-white text-slate-900"
+              data-i18n="contact.callUs"
+            >
+              Call Us
+            </button>
+            <button
+              id="open-contact-email"
+              type="button"
+              class="px-6 py-3 rounded-full font-medium border border-white/30"
+              data-i18n="contact.emailUs"
+            >
+              Email Us
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT PANEL -->
+  <div id="contact-panel" class="hidden fixed inset-0 z-[70]">
+    <div id="contact-backdrop" class="theme-backdrop absolute inset-0"></div>
 
     <div
       id="panel"
-      class="theme-panel absolute bottom-0 left-0 right-0 translate-y-full rounded-t-3xl border-t p-6 transition-transform duration-500 ease-out"
+      class="theme-panel absolute bottom-0 left-0 right-0 rounded-t-[2rem] border-t px-6 py-5 translate-y-full transition-transform duration-300"
     >
-      <div class="panel-handle mx-auto mb-6 h-1.5 w-12 rounded-full"></div>
+      <div class="max-w-4xl mx-auto">
+        <div class="panel-handle w-14 h-1.5 rounded-full mx-auto mb-6"></div>
 
-      <h3 class="mb-6 text-center text-xl font-semibold" data-i18n="contact.panelTitle">Contact Our Offices</h3>
-
-      <div class="space-y-6">
-        <div class="theme-contact-card flex items-center justify-between rounded-2xl p-5">
-          <div>
-            <p class="theme-panel-muted text-sm" data-i18n="contact.medan">Medan</p>
-            <p class="mt-1 text-lg font-semibold">(+62) 61 4571111</p>
-          </div>
-          <a href="tel:+62614571111" class="theme-primary-btn rounded-full px-4 py-2 text-sm" data-i18n="contact.call">Call</a>
+        <div class="flex items-center justify-between gap-4 mb-6">
+          <h3 class="text-2xl font-semibold" data-i18n="contact.panelTitle">Contact Our Offices</h3>
+          <button
+            id="close-panel"
+            type="button"
+            class="theme-toggle h-10 px-4 rounded-full"
+            data-i18n="contact.close"
+          >
+            Close
+          </button>
         </div>
 
-        <div class="theme-contact-card flex items-center justify-between rounded-2xl p-5">
-          <div>
-            <p class="theme-panel-muted text-sm" data-i18n="contact.belawan">Belawan</p>
-            <p class="mt-1 text-lg font-semibold">(+62) 61 6940095</p>
+        <div class="grid md:grid-cols-3 gap-5">
+          <div class="theme-contact-card rounded-3xl p-6">
+            <h4 class="text-lg font-semibold mb-3" data-i18n="contact.medan">Medan</h4>
+            <p class="theme-panel-muted mb-4">(+62)614571111</p>
+            <a href="tel:+620000000001" class="theme-link font-medium" data-i18n="contact.call">Call</a>
           </div>
-          <a href="tel:+62616940095" class="theme-primary-btn rounded-full px-4 py-2 text-sm" data-i18n="contact.call">Call</a>
-        </div>
 
-        <div class="theme-contact-card flex items-center justify-between rounded-2xl p-5">
-          <div>
-            <p class="theme-panel-muted text-sm" data-i18n="contact.emailBelawan">Email (Belawan)</p>
-            <p class="mt-1 text-lg font-semibold">info@mjb.co.id</p>
+          <div class="theme-contact-card rounded-3xl p-6">
+            <h4 class="text-lg font-semibold mb-3" data-i18n="contact.belawan">Belawan</h4>
+            <p class="theme-panel-muted mb-4">(+62)616940095</p>
+            <a href="tel:+620000000002" class="theme-link font-medium" data-i18n="contact.call">Call</a>
           </div>
-          <a href="mailto:info@mjb.co.id" class="theme-toggle rounded-full px-4 py-2 text-sm font-medium" data-i18n="contact.email">Email</a>
+
+          <div class="theme-contact-card rounded-3xl p-6">
+            <h4 class="text-lg font-semibold mb-3" data-i18n="contact.emailBelawan">Email (Belawan)</h4>
+            <p class="theme-panel-muted mb-4">info@mjb.co.id</p>
+            <a href="mailto:operations@example.com" class="theme-link font-medium" data-i18n="contact.email">Email</a>
+          </div>
         </div>
       </div>
-
-      <button id="close-panel" class="theme-toggle mt-8 w-full rounded-full py-3" data-i18n="contact.close">
-        Close
-      </button>
     </div>
   </div>
 
+  <script src="language.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
