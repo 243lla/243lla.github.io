@@ -24,26 +24,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const serviceCards = document.querySelectorAll('.service-card');
   const translationSource = window.MJB_TRANSLATIONS || {};
-  const languageNames = translationSource.languages || {};
 
   const languageDropdowns = [
     {
       wrapper: document.querySelector('#lang-toggle-desktop')?.closest('.language-dropdown'),
       toggle: document.getElementById('lang-toggle-desktop'),
-      menu: document.getElementById('lang-menu-desktop'),
-      current: document.getElementById('lang-current-desktop')
+      menu: document.getElementById('lang-menu-desktop')
     },
     {
       wrapper: document.querySelector('#lang-toggle-mobile-top')?.closest('.language-dropdown'),
       toggle: document.getElementById('lang-toggle-mobile-top'),
-      menu: document.getElementById('lang-menu-mobile-top'),
-      current: document.getElementById('lang-current-mobile-top')
+      menu: document.getElementById('lang-menu-mobile-top')
     },
     {
       wrapper: document.querySelector('#lang-toggle-mobile-menu')?.closest('.language-dropdown'),
       toggle: document.getElementById('lang-toggle-mobile-menu'),
-      menu: document.getElementById('lang-menu-mobile-menu'),
-      current: document.getElementById('lang-current-mobile-menu')
+      menu: document.getElementById('lang-menu-mobile-menu')
     }
   ];
 
@@ -69,16 +65,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function getLanguagePack(lang) {
     return translationSource[lang] || translationSource.en || {};
-  }
-
-  function setCurrentLanguageLabels(lang) {
-    const label = languageNames[lang] || 'English';
-
-    languageDropdowns.forEach(dropdown => {
-      if (dropdown.current) {
-        dropdown.current.textContent = label;
-      }
-    });
   }
 
   function setActiveLanguageOptions(lang) {
@@ -110,7 +96,6 @@ document.addEventListener('DOMContentLoaded', () => {
       'en';
 
     localStorage.setItem('mjb-language', lang);
-    setCurrentLanguageLabels(lang);
     setActiveLanguageOptions(lang);
   }
 

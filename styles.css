@@ -132,8 +132,10 @@ body {
 .lang-toggle {
   display: inline-flex;
   align-items: center;
-  gap: 0.45rem;
+  justify-content: center;
+  gap: 0;
   white-space: nowrap;
+  padding: 0;
 }
 
 .theme-primary-btn {
@@ -175,6 +177,7 @@ body {
   border: 1px solid var(--contact-card-border);
 }
 
+/* CLIENT CARDS */
 .client-card {
   position: relative;
   display: flex;
@@ -184,27 +187,29 @@ body {
   min-height: 110px;
   border-radius: 20px;
   overflow: hidden;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid var(--card-border);
+  background: #ffffff;
+  border: 1px solid rgba(15, 23, 42, 0.08);
   box-shadow:
-    0 10px 30px rgba(0, 0, 0, 0.18),
-    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    0 10px 30px rgba(0, 0, 0, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
   transition:
     transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
     border-color 0.35s ease,
-    box-shadow 0.35s ease,
-    background 0.35s ease;
+    box-shadow 0.35s ease;
 }
 
-.client-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  border-radius: inherit;
-  background: radial-gradient(circle at top center, rgba(255, 255, 255, 0.08), transparent 60%);
-  opacity: 1;
-  transition: opacity 0.35s ease;
+.client-card:hover {
+  transform: translateY(-6px);
+  background: #ffffff;
+  border-color: rgba(59, 130, 246, 0.35);
+  box-shadow:
+    0 18px 40px rgba(0, 0, 0, 0.18),
+    0 8px 20px rgba(59, 130, 246, 0.10);
+}
+
+body.dark-mode .client-card {
+  background: #ffffff;
+  border: 1px solid rgba(15, 23, 42, 0.08);
 }
 
 .client-logo {
@@ -214,20 +219,7 @@ body {
   max-width: 100%;
   width: auto;
   object-fit: contain;
-  filter: none;
-  opacity: 1;
-  transition:
-    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.client-card:hover {
-  transform: translateY(-6px);
-  background: rgba(255, 255, 255, 0.07);
-  border-color: rgba(59, 130, 246, 0.35);
-  box-shadow:
-    0 18px 40px rgba(0, 0, 0, 0.28),
-    0 8px 20px rgba(59, 130, 246, 0.10),
-    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .client-card:hover .client-logo {
@@ -239,64 +231,10 @@ body {
   border-radius: 24px;
   overflow: hidden;
   background: linear-gradient(135deg, #0b3b75 0%, #1d4ed8 100%);
-  box-shadow:
-    0 20px 50px rgba(15, 23, 42, 0.14),
-    inset 0 1px 0 rgba(255, 255, 255, 0.08);
-}
-
-.theme-contact-bg::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  pointer-events: none;
-  background: rgba(255, 255, 255, 0.88);
-  border: 1px solid rgba(15, 23, 42, 0.08);
-  box-shadow:
-    0 20px 50px rgba(15, 23, 42, 0.12),
-    inset 0 1px 0 rgba(255, 255, 255, 0.6);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-body.light-mode .theme-contact-bg::after {
-  opacity: 1;
-}
-
-.theme-contact-bg > * {
-  position: relative;
-  z-index: 1;
-}
-
-body.light-mode .theme-contact-bg,
-body.light-mode .theme-contact-bg h2,
-body.light-mode .theme-contact-bg p,
-body.light-mode .theme-contact-bg span {
-  color: #0f172a;
-}
-
-body.light-mode #open-contact {
-  background: var(--primary);
-  color: #fff;
-}
-
-body.light-mode #open-contact-email {
-  background: rgba(15, 23, 42, 0.05);
-  color: #0f172a;
-  border: 1px solid rgba(15, 23, 42, 0.12);
 }
 
 .language-dropdown {
   position: relative;
-}
-
-.lang-caret {
-  font-size: 1.1rem;
-  transition: transform 0.25s ease;
-}
-
-.language-dropdown.is-open .lang-caret {
-  transform: rotate(180deg);
 }
 
 .lang-menu {
@@ -371,13 +309,5 @@ body.dark-mode .lang-menu {
 
   .client-logo {
     max-height: 42px;
-  }
-
-  .lang-toggle {
-    gap: 0.35rem;
-  }
-
-  .lang-toggle span:last-child {
-    font-size: 0.75rem;
   }
 }
