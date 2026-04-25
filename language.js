@@ -51,6 +51,8 @@ window.MJB_TRANSLATIONS = {
     'clients.label': 'Clients',
     'clients.title': 'Trusted by our partners',
     'clients.desc': 'We work with a range of clients across logistics, shipping, and industrial sectors.',
+    'clients.container': 'Container Depot',
+    'clients.iso': 'ISO Tank Depot',     
 
     'contact.title': 'Need a logistics partner?',
     'contact.callUs': 'Call Us',
@@ -110,6 +112,8 @@ window.MJB_TRANSLATIONS = {
     'clients.label': '客户',
     'clients.title': '合作伙伴的信赖之选',
     'clients.desc': '我们服务于物流、航运及工业领域的多类客户。',
+    'clients.container': '集装箱堆场',
+    'clients.iso': 'ISO罐箱堆场',
 
     'contact.title': '需要可靠的物流合作伙伴？',
     'contact.callUs': '致电我们',
@@ -169,6 +173,8 @@ window.MJB_TRANSLATIONS = {
     'clients.label': 'Klien',
     'clients.title': 'Dipercaya oleh para mitra kami',
     'clients.desc': 'Kami bekerja dengan berbagai klien di sektor logistik, pelayaran, dan industri.',
+    'clients.container': 'Depo Kontainer',
+    'clients.iso': 'Depo ISO Tank',
 
     'contact.title': 'Butuh mitra logistik?',
     'contact.callUs': 'Telepon Kami',

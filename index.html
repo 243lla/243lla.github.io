@@ -398,35 +398,60 @@
     </div>
   </section>
 
-  <!-- CLIENTS -->
-  <section id="clients" class="py-20 theme-surface">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="max-w-2xl mb-10">
-        <p class="section-label uppercase tracking-[0.24em] text-xs mb-4" data-i18n="clients.label">Clients</p>
-        <h2 class="text-3xl md:text-4xl font-semibold mb-4" data-i18n="clients.title">Trusted by our partners</h2>
-        <p class="theme-muted" data-i18n="clients.desc">
-          We work with a range of clients across logistics, shipping, and industrial sectors.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5 justify-items-center">
-        <div class="client-card"><img class="client-logo" src="src/img/cma-cgm.png" alt="CMA CGM" /></div>
-        <div class="client-card"><img class="client-logo" src="src/img/ctp-line.jpg" alt="CTP Line" /></div>
-        <div class="client-card"><img class="client-logo" src="src/img/florens.png" alt="Florens" /></div>
-        <div class="client-card"><img class="client-logo" src="src/img/makhor.jpg" alt="Makhor" /></div>
-        <div class="client-card"><img class="client-logo" src="src/img/mtt-shipping.jpg" alt="MTT Shipping" /></div>
-
-        <div class="client-card"><img class="client-logo" src="src/img/osl.png" alt="OSL" /></div>
-        <div class="client-card"><img class="client-logo" src="src/img/seaco.jpg" alt="Seaco" /></div>
-        <div class="client-card"><img class="client-logo" src="src/img/textainer.jpg" alt="Textainer" /></div>
-        <div class="client-card"><img class="client-logo" src="src/img/tslines.jpg" alt="TS Lines" /></div>
-        <div class="client-card"><img class="client-logo" src="src/img/vertex.jpg" alt="Vertex" /></div>
-
-        <div class="client-card"><img class="client-logo" src="src/img/wanhai.png" alt="Wan Hai" /></div>
-      </div>
+<!-- CLIENTS -->
+<section id="clients" class="py-20 theme-surface">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-2xl mb-10">
+      <p class="section-label uppercase tracking-[0.24em] text-xs mb-4" data-i18n="clients.label">Clients</p>
+      <h2 class="text-3xl md:text-4xl font-semibold mb-4" data-i18n="clients.title">Trusted by our partners</h2>
+      <p class="theme-muted" data-i18n="clients.desc">
+        We work with a range of clients across logistics, shipping, and industrial sectors.
+      </p>
     </div>
-  </section>
 
+    <!-- NEW TOGGLE -->
+    <div class="client-tabs mb-8 flex gap-3">
+      <button class="client-tab active px-5 py-2 rounded-full border" data-tab="container" data-i18n="clients.container">
+        Container Depot
+      </button>
+      <button class="client-tab px-5 py-2 rounded-full border" data-tab="iso" data-i18n="clients.iso">
+        ISO Tank Depot
+      </button>
+    </div>
+
+    <!-- CLIENT GRID -->
+    <div id="client-grid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5 justify-items-center">
+
+      <!-- CONTAINER CLIENTS -->
+      <div class="client-card" data-type="container"><img class="client-logo" src="src/img/Container_Depot/cma-cgm.png" alt="CMA CGM" /></div>
+      <div class="client-card" data-type="container"><img class="client-logo" src="src/img/Container_Depot/ctp-line.jpg" alt="CTP Line" /></div>
+      <div class="client-card" data-type="container"><img class="client-logo" src="src/img/Container_Depot/florens.png" alt="Florens" /></div>
+      <div class="client-card" data-type="container"><img class="client-logo" src="src/img/Container_Depot/makhor.jpg" alt="Makhor" /></div>
+      <div class="client-card" data-type="container"><img class="client-logo" src="src/img/Container_Depot/mtt-shipping.jpg" alt="MTT Shipping" /></div>
+      <div class="client-card" data-type="container"><img class="client-logo" src="src/img/Container_Depot/osl.png" alt="OSL" /></div>
+      <div class="client-card" data-type="container"><img class="client-logo" src="src/img/Container_Depot/seaco.jpg" alt="Seaco" /></div>
+      <div class="client-card" data-type="container"><img class="client-logo" src="src/img/Container_Depot/textainer.jpg" alt="Textainer" /></div>
+      <div class="client-card" data-type="container"><img class="client-logo" src="src/img/Container_Depot/tslines.jpg" alt="TS Lines" /></div>
+      <div class="client-card" data-type="container"><img class="client-logo" src="src/img/Container_Depot/vertex.jpg" alt="Vertex" /></div>
+      <div class="client-card" data-type="container"><img class="client-logo" src="src/img/Container_Depot/wanhai.png" alt="Wan Hai" /></div>
+      <div class="client-card" data-type="container"><img class="client-logo" src="src/img/Container_Depot/Maersk_Line_Logo.png" alt="Maersk Line" /></div>
+
+      <!-- ISO CLIENTS -->
+      <div class="client-card hidden" data-type="iso"><img class="client-logo" src="src/img/ISO_Tank_Depot/bertchi.jpg" alt="Bertschi" /></div>
+      <div class="client-card hidden" data-type="iso"><img class="client-logo" src="src/img/ISO_Tank_Depot/Bulkhaul.jpg" alt="Bulkhaul" /></div>
+      <div class="client-card hidden" data-type="iso"><img class="client-logo" src="src/img/ISO_Tank_Depot/denhartogh.jpg" alt="Den Hartogh Logistics" /></div>
+      <div class="client-card hidden" data-type="iso"><img class="client-logo" src="src/img/ISO_Tank_Depot/Eagletainer.jpg" alt="Eagletainer" /></div>
+      <div class="client-card hidden" data-type="iso"><img class="client-logo" src="src/img/ISO_Tank_Depot/E-way.jpg" alt="E-way" /></div>
+      <div class="client-card hidden" data-type="iso"><img class="client-logo" src="src/img/ISO_Tank_Depot/Goodrich.jpg" alt="Goodrich" /></div>
+      <div class="client-card hidden" data-type="iso"><img class="client-logo" src="src/img/ISO_Tank_Depot/ITT.jpg" alt="ITT Intermodal Tank Transport" /></div>
+      <div class="client-card hidden" data-type="iso"><img class="client-logo" src="src/img/ISO_Tank_Depot/Lida.png" alt="Lida" /></div>
+      <div class="client-card hidden" data-type="iso"><img class="client-logo" src="src/img/ISO_Tank_Depot/Monter.png" alt="Monter Global" /></div>
+      <div class="client-card hidden" data-type="iso"><img class="client-logo" src="src/img/ISO_Tank_Depot/Newport.png" alt="NewPort" /></div>
+      <div class="client-card hidden" data-type="iso"><img class="client-logo" src="src/img/ISO_Tank_Depot/samudera.jpg" alt="Samudera" /></div>
+
+      </div>
+  </div>
+</section>
   <!-- CONTACT -->
   <section id="contact" class="py-20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
