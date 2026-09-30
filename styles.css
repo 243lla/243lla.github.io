@@ -316,19 +316,20 @@ body.dark-mode .lang-menu {
 }
 
 @media (max-width: 640px) {
-.client-card {
-  padding: 20px;
-  min-height: 130px;
-}
+  .client-card {
+    padding: 20px;
+    min-height: 130px;
+  }
 
-.client-logo {
-  filter: grayscale(100%);
-  opacity: 0.8;
-  transition: all 0.3s ease;
-}
+  .client-logo {
+    filter: grayscale(100%);
+    opacity: 0.8;
+    transition: all 0.3s ease;
+  }
 
-.client-card:hover .client-logo {
-  filter: grayscale(0%);
-  opacity: 1;
-  transform: scale(1.08);
+  .client-card:hover .client-logo {
+    filter: grayscale(0%);
+    opacity: 1;
+    transform: scale(1.08);
+  }
 }

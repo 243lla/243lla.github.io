@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,13 +8,12 @@
 
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <link
-    rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
-  />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
   <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body class="light-mode theme-surface theme-text antialiased">
 
   <!-- HEADER -->
@@ -21,17 +21,11 @@
     <div id="header-inner" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 transition-all duration-300">
       <div class="flex items-center justify-between gap-4">
         <a href="#home" class="flex items-center gap-3 min-w-0">
-          <img
-            id="site-logo"
-            src="src/img/MJB logo.png"
-            alt="MJB Logo"
-            class="h-12 md:h-14 w-auto rounded-xl object-cover transition-all duration-300"
-          />
+          <img id="site-logo" src="src/img/MJB logo.png" alt="MJB Logo"
+            class="h-12 md:h-14 w-auto rounded-xl object-cover transition-all duration-300" />
           <div class="min-w-0">
-            <div
-              id="site-brand"
-              class="text-base md:text-lg font-semibold tracking-[0.14em] uppercase transition-all duration-300"
-            >
+            <div id="site-brand"
+              class="text-base md:text-lg font-semibold tracking-[0.14em] uppercase transition-all duration-300">
               PT MITRAJAYA BAHARI
             </div>
             <p class="theme-muted text-xs md:text-sm">Belawan, North Sumatra</p>
@@ -48,24 +42,16 @@
         </nav>
 
         <div class="hidden md:flex items-center gap-2">
-          <button
-            id="theme-toggle-desktop"
-            class="theme-toggle h-11 w-11 rounded-full inline-flex items-center justify-center"
-            type="button"
-            aria-label="Toggle theme"
-          >
+          <button id="theme-toggle-desktop"
+            class="theme-toggle h-11 w-11 rounded-full inline-flex items-center justify-center" type="button"
+            aria-label="Toggle theme">
             <span id="theme-icon-desktop" class="material-symbols-outlined">dark_mode</span>
           </button>
 
           <div class="language-dropdown">
-            <button
-              id="lang-toggle-desktop"
-              class="lang-toggle h-11 w-11 rounded-full inline-flex items-center justify-center"
-              type="button"
-              aria-haspopup="true"
-              aria-expanded="false"
-              aria-label="Change language"
-            >
+            <button id="lang-toggle-desktop"
+              class="lang-toggle h-11 w-11 rounded-full inline-flex items-center justify-center" type="button"
+              aria-haspopup="true" aria-expanded="false" aria-label="Change language">
               <span class="material-symbols-outlined">translate</span>
             </button>
 
@@ -78,24 +64,16 @@
         </div>
 
         <div class="md:hidden flex items-center gap-2">
-          <button
-            id="theme-toggle-mobile-top"
-            class="theme-toggle h-10 w-10 rounded-full inline-flex items-center justify-center"
-            type="button"
-            aria-label="Toggle theme"
-          >
+          <button id="theme-toggle-mobile-top"
+            class="theme-toggle h-10 w-10 rounded-full inline-flex items-center justify-center" type="button"
+            aria-label="Toggle theme">
             <span id="theme-icon-mobile-top" class="material-symbols-outlined">dark_mode</span>
           </button>
 
           <div class="language-dropdown">
-            <button
-              id="lang-toggle-mobile-top"
-              class="lang-toggle h-10 w-10 rounded-full inline-flex items-center justify-center"
-              type="button"
-              aria-haspopup="true"
-              aria-expanded="false"
-              aria-label="Change language"
-            >
+            <button id="lang-toggle-mobile-top"
+              class="lang-toggle h-10 w-10 rounded-full inline-flex items-center justify-center" type="button"
+              aria-haspopup="true" aria-expanded="false" aria-label="Change language">
               <span class="material-symbols-outlined text-[20px]">translate</span>
             </button>
 
@@ -106,12 +84,9 @@
             </div>
           </div>
 
-          <button
-            id="menu-btn"
-            class="theme-toggle h-10 w-10 rounded-full text-lg inline-flex items-center justify-center"
-            type="button"
-            aria-label="Open menu"
-          >
+          <button id="menu-btn"
+            class="theme-toggle h-10 w-10 rounded-full text-lg inline-flex items-center justify-center" type="button"
+            aria-label="Open menu">
             ☰
           </button>
         </div>
@@ -128,14 +103,9 @@
 
           <div class="pt-2 border-t border-theme">
             <div class="language-dropdown">
-              <button
-                id="lang-toggle-mobile-menu"
-                class="lang-toggle h-10 w-10 rounded-full inline-flex items-center justify-center"
-                type="button"
-                aria-haspopup="true"
-                aria-expanded="false"
-                aria-label="Change language"
-              >
+              <button id="lang-toggle-mobile-menu"
+                class="lang-toggle h-10 w-10 rounded-full inline-flex items-center justify-center" type="button"
+                aria-haspopup="true" aria-expanded="false" aria-label="Change language">
                 <span class="material-symbols-outlined text-[20px]">translate</span>
               </button>
 
@@ -147,12 +117,9 @@
             </div>
           </div>
 
-          <button
-            id="theme-toggle-mobile-menu"
+          <button id="theme-toggle-mobile-menu"
             class="theme-toggle h-10 px-4 rounded-full inline-flex items-center justify-center gap-2 self-start"
-            type="button"
-            aria-label="Toggle theme"
-          >
+            type="button" aria-label="Toggle theme">
             <span id="theme-icon-mobile-menu" class="material-symbols-outlined">dark_mode</span>
             <span>Theme</span>
           </button>
@@ -162,11 +129,8 @@
   </header>
 
   <!-- HERO -->
-  <section
-    id="home"
-    class="relative min-h-screen flex items-center"
-    style="background-image: url('src/img/MJB office image.jpg'); background-size: cover; background-position: center;"
-  >
+  <section id="home" class="relative min-h-screen flex items-center"
+    style="background-image: url('src/img/MJB office image.jpg'); background-size: cover; background-position: center;">
     <div class="hero-overlay absolute inset-0"></div>
     <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pt-32 pb-20">
       <div class="max-w-3xl text-white">
@@ -175,22 +139,19 @@
           Integrated Logistics, Depot & Customs Solutions
         </h1>
         <p class="text-base md:text-lg text-white/80 max-w-2xl mb-8" data-i18n="hero.desc">
-          Supporting reliable cargo movement through container depot, ISO tank depot, transportation, customs brokerage, and warehousing services.
+          Supporting reliable cargo movement through container depot, ISO tank depot, transportation, customs brokerage,
+          and warehousing services.
         </p>
 
         <div class="flex flex-wrap gap-3">
-          <a
-            href="#contact"
+          <a href="#contact"
             class="theme-primary-btn px-6 py-3 rounded-full font-medium inline-flex items-center justify-center"
-            data-i18n="cta.contactUs"
-          >
+            data-i18n="cta.contactUs">
             Contact Us
           </a>
-          <a
-            href="#services"
+          <a href="#services"
             class="theme-secondary-btn border px-6 py-3 rounded-full font-medium inline-flex items-center justify-center"
-            data-i18n="cta.exploreServices"
-          >
+            data-i18n="cta.exploreServices">
             Explore Services
           </a>
         </div>
@@ -210,75 +171,88 @@
       </div>
 
       <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-5">
-        <button class="service-card theme-card theme-card-hover text-left rounded-3xl p-6 transition-all duration-300" type="button" aria-expanded="false">
+        <button class="service-card theme-card theme-card-hover text-left rounded-3xl p-6 transition-all duration-300"
+          type="button" aria-expanded="false">
           <div class="flex items-start justify-between gap-4">
             <div>
               <h3 class="text-xl font-semibold mb-2" data-i18n="services.containerDepot.title">Container Depot</h3>
-              <p class="theme-muted" data-i18n="services.containerDepot.desc">Our depot offers secure and efficient container storage and maintenance.</p>
+              <p class="theme-muted" data-i18n="services.containerDepot.desc">Our depot offers secure and efficient
+                container storage and maintenance.</p>
             </div>
             <span class="service-icon material-symbols-outlined transition-transform duration-300">add</span>
           </div>
           <div class="service-content grid grid-rows-[0fr] transition-all duration-300">
             <div class="overflow-hidden">
               <p class="theme-muted pt-5">
-                Container inspection, repair coordination, yard handling, storage management, and operational support near port access.
+                Container inspection, repair coordination, yard handling, storage management, and operational support
+                near port access.
               </p>
             </div>
           </div>
         </button>
 
-        <button class="service-card theme-card theme-card-hover text-left rounded-3xl p-6 transition-all duration-300" type="button" aria-expanded="false">
+        <button class="service-card theme-card theme-card-hover text-left rounded-3xl p-6 transition-all duration-300"
+          type="button" aria-expanded="false">
           <div class="flex items-start justify-between gap-4">
             <div>
               <h3 class="text-xl font-semibold mb-2" data-i18n="services.isoTank.title">ISO Tank Depot</h3>
-              <p class="theme-muted" data-i18n="services.isoTank.desc">Specialized storage and maintenance for ISO tanks.</p>
+              <p class="theme-muted" data-i18n="services.isoTank.desc">Specialized storage and maintenance for ISO
+                tanks.</p>
             </div>
             <span class="service-icon material-symbols-outlined transition-transform duration-300">add</span>
           </div>
           <div class="service-content grid grid-rows-[0fr] transition-all duration-300">
             <div class="overflow-hidden">
               <p class="theme-muted pt-5">
-                Dedicated ISO tank handling, storage coordination, support services, and depot processes aligned with industrial cargo needs.
+                Dedicated ISO tank handling, storage coordination, support services, and depot processes aligned with
+                industrial cargo needs.
               </p>
             </div>
           </div>
         </button>
 
-        <button class="service-card theme-card theme-card-hover text-left rounded-3xl p-6 transition-all duration-300" type="button" aria-expanded="false">
+        <button class="service-card theme-card theme-card-hover text-left rounded-3xl p-6 transition-all duration-300"
+          type="button" aria-expanded="false">
           <div class="flex items-start justify-between gap-4">
             <div>
               <h3 class="text-xl font-semibold mb-2" data-i18n="services.trucking.title">Trucking & Transportation</h3>
-              <p class="theme-muted" data-i18n="services.trucking.desc">Reliable trucking and transportation services for goods and containers.</p>
+              <p class="theme-muted" data-i18n="services.trucking.desc">Reliable trucking and transportation services
+                for goods and containers.</p>
             </div>
             <span class="service-icon material-symbols-outlined transition-transform duration-300">add</span>
           </div>
           <div class="service-content grid grid-rows-[0fr] transition-all duration-300">
             <div class="overflow-hidden">
               <p class="theme-muted pt-5">
-                Inland delivery coordination, container movement, cargo transfers, and dependable transport support for port-related logistics.
+                Inland delivery coordination, container movement, cargo transfers, and dependable transport support for
+                port-related logistics.
               </p>
             </div>
           </div>
         </button>
 
-        <button class="service-card theme-card theme-card-hover text-left rounded-3xl p-6 transition-all duration-300" type="button" aria-expanded="false">
+        <button class="service-card theme-card theme-card-hover text-left rounded-3xl p-6 transition-all duration-300"
+          type="button" aria-expanded="false">
           <div class="flex items-start justify-between gap-4">
             <div>
               <h3 class="text-xl font-semibold mb-2" data-i18n="services.customs.title">Customs Brokerage</h3>
-              <p class="theme-muted" data-i18n="services.customs.desc">Expert customs clearance and documentation handling.</p>
+              <p class="theme-muted" data-i18n="services.customs.desc">Expert customs clearance and documentation
+                handling.</p>
             </div>
             <span class="service-icon material-symbols-outlined transition-transform duration-300">add</span>
           </div>
           <div class="service-content grid grid-rows-[0fr] transition-all duration-300">
             <div class="overflow-hidden">
               <p class="theme-muted pt-5">
-                Import-export documentation support, compliance coordination, customs processing, and shipment release assistance.
+                Import-export documentation support, compliance coordination, customs processing, and shipment release
+                assistance.
               </p>
             </div>
           </div>
         </button>
 
-        <button class="service-card theme-card theme-card-hover text-left rounded-3xl p-6 transition-all duration-300" type="button" aria-expanded="false">
+        <button class="service-card theme-card theme-card-hover text-left rounded-3xl p-6 transition-all duration-300"
+          type="button" aria-expanded="false">
           <div class="flex items-start justify-between gap-4">
             <div>
               <h3 class="text-xl font-semibold mb-2" data-i18n="services.logistics.title">Logistics</h3>
@@ -295,7 +269,8 @@
           </div>
         </button>
 
-        <button class="service-card theme-card theme-card-hover text-left rounded-3xl p-6 transition-all duration-300" type="button" aria-expanded="false">
+        <button class="service-card theme-card theme-card-hover text-left rounded-3xl p-6 transition-all duration-300"
+          type="button" aria-expanded="false">
           <div class="flex items-start justify-between gap-4">
             <div>
               <h3 class="text-xl font-semibold mb-2" data-i18n="services.warehousing.title">Warehousing</h3>
@@ -306,7 +281,8 @@
           <div class="service-content grid grid-rows-[0fr] transition-all duration-300">
             <div class="overflow-hidden">
               <p class="theme-muted pt-5">
-                Short-term and longer-term cargo storage, handling support, and organized warehousing for operational flexibility.
+                Short-term and longer-term cargo storage, handling support, and organized warehousing for operational
+                flexibility.
               </p>
             </div>
           </div>
@@ -325,7 +301,8 @@
             Decades of experience supporting international trade
           </h2>
           <p class="theme-muted text-base leading-7 mb-8" data-i18n="about.desc">
-            Founded in 1985, MJB has expanded from freight forwarding and customs services into depot, isotank and logistics operations to support evolving cargo demands.
+            Founded in 1985, MJB has expanded from freight forwarding and customs services into depot, isotank and
+            logistics operations to support evolving cargo demands.
           </p>
 
           <div class="grid sm:grid-cols-3 gap-4">
@@ -345,11 +322,8 @@
         </div>
 
         <div class="theme-card rounded-[2rem] p-3">
-          <img
-            src="src/img/MJB container image.jpg"
-            alt="Logistics operations"
-            class="w-full h-[420px] object-cover rounded-[1.5rem]"
-          />
+          <img src="src/img/MJB container image.jpg" alt="Logistics operations"
+            class="w-full h-[420px] object-cover rounded-[1.5rem]" />
         </div>
       </div>
     </div>
@@ -365,7 +339,8 @@
             Strategically located in Belawan
           </h2>
           <p class="theme-muted leading-7 mb-8" data-i18n="location.desc">
-            Our operations are based in Belawan, North Sumatra — one of Indonesia’s key port areas, enabling efficient access to international shipping routes, container handling, and logistics infrastructure.
+            Our operations are based in Belawan, North Sumatra — one of Indonesia’s key port areas, enabling efficient
+            access to international shipping routes, container handling, and logistics infrastructure.
           </p>
 
           <div class="theme-card rounded-3xl p-6">
@@ -373,85 +348,100 @@
             <p class="theme-muted mb-4" data-i18n="location.address">
               Jalan Raya Pelabuhan Gabion, Belawan<br>North Sumatra, Indonesia
             </p>
-            <a
-              href="https://maps.google.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="theme-link font-medium"
-              data-i18n="location.map"
-            >
+            <a href="https://maps.google.com/?cid=16264465770777460816&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAMYASAF&hl=en-US&source=embed"
+              target="_blank" rel="noopener noreferrer" class="theme-link font-medium" data-i18n="location.map">
               View on Google Maps →
             </a>
           </div>
         </div>
 
         <div class="theme-card rounded-[2rem] p-3">
-          <iframe
-            title="Belawan map"
-            class="w-full h-[420px] rounded-[1.5rem]"
-            src="https://www.google.com/maps?q=Belawan%20North%20Sumatra%20Indonesia&output=embed"
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-          ></iframe>
+          <iframe title="Belawan map" class="w-full h-[420px] rounded-[1.5rem]"
+            src="https://www.google.com/maps?q=Belawan%20North%20Sumatra%20Indonesia&output=embed" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
       </div>
     </div>
   </section>
 
-<!-- CLIENTS -->
-<section id="clients" class="py-20 theme-surface">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="max-w-2xl mb-10">
-      <p class="section-label uppercase tracking-[0.24em] text-xs mb-4" data-i18n="clients.label">Clients</p>
-      <h2 class="text-3xl md:text-4xl font-semibold mb-4" data-i18n="clients.title">Trusted by our partners</h2>
-      <p class="theme-muted" data-i18n="clients.desc">
-        We work with a range of clients across logistics, shipping, and industrial sectors.
-      </p>
-    </div>
+  <!-- CLIENTS -->
+  <section id="clients" class="py-20 theme-surface">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-2xl mb-10">
+        <p class="section-label uppercase tracking-[0.24em] text-xs mb-4" data-i18n="clients.label">Clients</p>
+        <h2 class="text-3xl md:text-4xl font-semibold mb-4" data-i18n="clients.title">Trusted by our partners</h2>
+        <p class="theme-muted" data-i18n="clients.desc">
+          We work with a range of clients across logistics, shipping, and industrial sectors.
+        </p>
+      </div>
 
-    <!-- NEW TOGGLE -->
-    <div class="client-tabs mb-8 flex gap-3">
-      <button class="client-tab active px-5 py-2 rounded-full border" data-tab="container" data-i18n="clients.container">
-        Container Depot
-      </button>
-      <button class="client-tab px-5 py-2 rounded-full border" data-tab="iso" data-i18n="clients.iso">
-        ISO Tank Depot
-      </button>
-    </div>
+      <!-- NEW TOGGLE -->
+      <div class="client-tabs mb-8 flex gap-3">
+        <button class="client-tab active px-5 py-2 rounded-full border" data-tab="container"
+          data-i18n="clients.container">
+          Container Depot
+        </button>
+        <button class="client-tab px-5 py-2 rounded-full border" data-tab="iso" data-i18n="clients.iso">
+          ISO Tank Depot
+        </button>
+      </div>
 
-    <!-- CLIENT GRID -->
-    <div id="client-grid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5 justify-items-center">
+      <!-- CLIENT GRID -->
+      <div id="client-grid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5 justify-items-center">
 
-      <!-- CONTAINER CLIENTS -->
-      <div class="client-card" data-type="container"><img class="client-logo" src="src/img/Container_Depot/cma-cgm.png" alt="CMA CGM" /></div>
-      <div class="client-card" data-type="container"><img class="client-logo" src="src/img/Container_Depot/ctp-line.jpg" alt="CTP Line" /></div>
-      <div class="client-card" data-type="container"><img class="client-logo" src="src/img/Container_Depot/florens.png" alt="Florens" /></div>
-      <div class="client-card" data-type="container"><img class="client-logo" src="src/img/Container_Depot/makhor.jpg" alt="Makhor" /></div>
-      <div class="client-card" data-type="container"><img class="client-logo" src="src/img/Container_Depot/mtt-shipping.jpg" alt="MTT Shipping" /></div>
-      <div class="client-card" data-type="container"><img class="client-logo" src="src/img/Container_Depot/osl.png" alt="OSL" /></div>
-      <div class="client-card" data-type="container"><img class="client-logo" src="src/img/Container_Depot/seaco.jpg" alt="Seaco" /></div>
-      <div class="client-card" data-type="container"><img class="client-logo" src="src/img/Container_Depot/textainer.jpg" alt="Textainer" /></div>
-      <div class="client-card" data-type="container"><img class="client-logo" src="src/img/Container_Depot/tslines.jpg" alt="TS Lines" /></div>
-      <div class="client-card" data-type="container"><img class="client-logo" src="src/img/Container_Depot/vertex.jpg" alt="Vertex" /></div>
-      <div class="client-card" data-type="container"><img class="client-logo" src="src/img/Container_Depot/wanhai.png" alt="Wan Hai" /></div>
-      <div class="client-card" data-type="container"><img class="client-logo" src="src/img/Container_Depot/Maersk_Line_Logo.png" alt="Maersk Line" /></div>
+        <!-- CONTAINER CLIENTS -->
+        <div class="client-card" data-type="container"><img class="client-logo"
+            src="src/img/Container_Depot/cma-cgm.png" alt="CMA CGM" /></div>
+        <div class="client-card" data-type="container"><img class="client-logo"
+            src="src/img/Container_Depot/ctp-line.jpg" alt="CTP Line" /></div>
+        <div class="client-card" data-type="container"><img class="client-logo"
+            src="src/img/Container_Depot/florens.png" alt="Florens" /></div>
+        <div class="client-card" data-type="container"><img class="client-logo" src="src/img/Container_Depot/makhor.jpg"
+            alt="Makhor" /></div>
+        <div class="client-card" data-type="container"><img class="client-logo"
+            src="src/img/Container_Depot/mtt-shipping.jpg" alt="MTT Shipping" /></div>
+        <div class="client-card" data-type="container"><img class="client-logo" src="src/img/Container_Depot/osl.png"
+            alt="OSL" /></div>
+        <div class="client-card" data-type="container"><img class="client-logo" src="src/img/Container_Depot/seaco.jpg"
+            alt="Seaco" /></div>
+        <div class="client-card" data-type="container"><img class="client-logo"
+            src="src/img/Container_Depot/textainer.jpg" alt="Textainer" /></div>
+        <div class="client-card" data-type="container"><img class="client-logo"
+            src="src/img/Container_Depot/tslines.jpg" alt="TS Lines" /></div>
+        <div class="client-card" data-type="container"><img class="client-logo" src="src/img/Container_Depot/vertex.jpg"
+            alt="Vertex" /></div>
+        <div class="client-card" data-type="container"><img class="client-logo" src="src/img/Container_Depot/wanhai.png"
+            alt="Wan Hai" /></div>
+        <div class="client-card" data-type="container"><img class="client-logo"
+            src="src/img/Container_Depot/Maersk_Line_Logo.png" alt="Maersk Line" /></div>
 
-      <!-- ISO CLIENTS -->
-      <div class="client-card hidden" data-type="iso"><img class="client-logo" src="src/img/ISO_Tank_Depot/bertchi.jpg" alt="Bertschi" /></div>
-      <div class="client-card hidden" data-type="iso"><img class="client-logo" src="src/img/ISO_Tank_Depot/Bulkhaul.jpg" alt="Bulkhaul" /></div>
-      <div class="client-card hidden" data-type="iso"><img class="client-logo" src="src/img/ISO_Tank_Depot/denhartogh.jpg" alt="Den Hartogh Logistics" /></div>
-      <div class="client-card hidden" data-type="iso"><img class="client-logo" src="src/img/ISO_Tank_Depot/Eagletainer.jpg" alt="Eagletainer" /></div>
-      <div class="client-card hidden" data-type="iso"><img class="client-logo" src="src/img/ISO_Tank_Depot/E-way.jpg" alt="E-way" /></div>
-      <div class="client-card hidden" data-type="iso"><img class="client-logo" src="src/img/ISO_Tank_Depot/Goodrich.jpg" alt="Goodrich" /></div>
-      <div class="client-card hidden" data-type="iso"><img class="client-logo" src="src/img/ISO_Tank_Depot/ITT.jpg" alt="ITT Intermodal Tank Transport" /></div>
-      <div class="client-card hidden" data-type="iso"><img class="client-logo" src="src/img/ISO_Tank_Depot/Lida.png" alt="Lida" /></div>
-      <div class="client-card hidden" data-type="iso"><img class="client-logo" src="src/img/ISO_Tank_Depot/Monter.png" alt="Monter Global" /></div>
-      <div class="client-card hidden" data-type="iso"><img class="client-logo" src="src/img/ISO_Tank_Depot/Newport.png" alt="NewPort" /></div>
-      <div class="client-card hidden" data-type="iso"><img class="client-logo" src="src/img/ISO_Tank_Depot/samudera.jpg" alt="Samudera" /></div>
+        <!-- ISO CLIENTS -->
+        <div class="client-card hidden" data-type="iso"><img class="client-logo"
+            src="src/img/ISO_Tank_Depot/bertchi.jpg" alt="Bertschi" /></div>
+        <div class="client-card hidden" data-type="iso"><img class="client-logo"
+            src="src/img/ISO_Tank_Depot/Bulkhaul.jpg" alt="Bulkhaul" /></div>
+        <div class="client-card hidden" data-type="iso"><img class="client-logo"
+            src="src/img/ISO_Tank_Depot/denhartogh.jpg" alt="Den Hartogh Logistics" /></div>
+        <div class="client-card hidden" data-type="iso"><img class="client-logo"
+            src="src/img/ISO_Tank_Depot/Eagletainer.jpg" alt="Eagletainer" /></div>
+        <div class="client-card hidden" data-type="iso"><img class="client-logo" src="src/img/ISO_Tank_Depot/E-way.jpg"
+            alt="E-way" /></div>
+        <div class="client-card hidden" data-type="iso"><img class="client-logo"
+            src="src/img/ISO_Tank_Depot/Goodrich.jpg" alt="Goodrich" /></div>
+        <div class="client-card hidden" data-type="iso"><img class="client-logo" src="src/img/ISO_Tank_Depot/ITT.jpg"
+            alt="ITT Intermodal Tank Transport" /></div>
+        <div class="client-card hidden" data-type="iso"><img class="client-logo" src="src/img/ISO_Tank_Depot/Lida.png"
+            alt="Lida" /></div>
+        <div class="client-card hidden" data-type="iso"><img class="client-logo" src="src/img/ISO_Tank_Depot/Monter.png"
+            alt="Monter Global" /></div>
+        <div class="client-card hidden" data-type="iso"><img class="client-logo"
+            src="src/img/ISO_Tank_Depot/Newport.png" alt="NewPort" /></div>
+        <div class="client-card hidden" data-type="iso"><img class="client-logo"
+            src="src/img/ISO_Tank_Depot/samudera.jpg" alt="Samudera" /></div>
 
       </div>
-  </div>
-</section>
+    </div>
+  </section>
   <!-- CONTACT -->
   <section id="contact" class="py-20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -463,20 +453,12 @@
           </p>
 
           <div class="flex flex-wrap gap-3">
-            <button
-              id="open-contact"
-              type="button"
-              class="px-6 py-3 rounded-full font-medium bg-white text-slate-900"
-              data-i18n="contact.callUs"
-            >
+            <button id="open-contact" type="button" class="px-6 py-3 rounded-full font-medium bg-white text-slate-900"
+              data-i18n="contact.callUs">
               Call Us
             </button>
-            <button
-              id="open-contact-email"
-              type="button"
-              class="px-6 py-3 rounded-full font-medium border border-white/30"
-              data-i18n="contact.emailUs"
-            >
+            <button id="open-contact-email" type="button"
+              class="px-6 py-3 rounded-full font-medium border border-white/30" data-i18n="contact.emailUs">
               Email Us
             </button>
           </div>
@@ -489,21 +471,14 @@
   <div id="contact-panel" class="hidden fixed inset-0 z-[70]">
     <div id="contact-backdrop" class="theme-backdrop absolute inset-0"></div>
 
-    <div
-      id="panel"
-      class="theme-panel absolute bottom-0 left-0 right-0 rounded-t-[2rem] border-t px-6 py-5 translate-y-full transition-transform duration-300"
-    >
+    <div id="panel"
+      class="theme-panel absolute bottom-0 left-0 right-0 rounded-t-[2rem] border-t px-6 py-5 translate-y-full transition-transform duration-300">
       <div class="max-w-4xl mx-auto">
         <div class="panel-handle w-14 h-1.5 rounded-full mx-auto mb-6"></div>
 
         <div class="flex items-center justify-between gap-4 mb-6">
           <h3 class="text-2xl font-semibold" data-i18n="contact.panelTitle">Contact Our Offices</h3>
-          <button
-            id="close-panel"
-            type="button"
-            class="theme-toggle h-10 px-4 rounded-full"
-            data-i18n="contact.close"
-          >
+          <button id="close-panel" type="button" class="theme-toggle h-10 px-4 rounded-full" data-i18n="contact.close">
             Close
           </button>
         </div>
@@ -534,4 +509,5 @@
   <script src="language.js"></script>
   <script src="app.js"></script>
 </body>
+
 </html>

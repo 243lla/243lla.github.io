@@ -52,7 +52,7 @@ window.MJB_TRANSLATIONS = {
     'clients.title': 'Trusted by our partners',
     'clients.desc': 'We work with a range of clients across logistics, shipping, and industrial sectors.',
     'clients.container': 'Container Depot',
-    'clients.iso': 'ISO Tank Depot',     
+    'clients.iso': 'ISO Tank Depot',
 
     'contact.title': 'Need a logistics partner?',
     'contact.callUs': 'Call Us',
@@ -60,7 +60,7 @@ window.MJB_TRANSLATIONS = {
     'contact.panelTitle': 'Contact Our Offices',
     'contact.medan': 'Medan',
     'contact.belawan': 'Belawan',
-    'contact.emailBelawan': 'Email (Belawan)',
+    'contact.emailBelawan': 'Email',
     'contact.call': 'Call',
     'contact.email': 'Email',
     'contact.close': 'Close'
@@ -121,7 +121,7 @@ window.MJB_TRANSLATIONS = {
     'contact.panelTitle': '联系我们的办公室',
     'contact.medan': '棉兰',
     'contact.belawan': '勿拉湾',
-    'contact.emailBelawan': '电子邮箱（勿拉湾）',
+    'contact.emailBelawan': '电子邮箱',
     'contact.call': '拨打',
     'contact.email': '邮件',
     'contact.close': '关闭'
@@ -182,7 +182,7 @@ window.MJB_TRANSLATIONS = {
     'contact.panelTitle': 'Hubungi Kantor Kami',
     'contact.medan': 'Medan',
     'contact.belawan': 'Belawan',
-    'contact.emailBelawan': 'Email (Belawan)',
+    'contact.emailBelawan': 'Email',
     'contact.call': 'Telepon',
     'contact.email': 'Email',
     'contact.close': 'Tutup'
