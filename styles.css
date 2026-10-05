@@ -333,3 +333,25 @@ body.dark-mode .lang-menu {
     transform: scale(1.08);
   }
 }
+
+/* Location Nav Pills Styling */
+#location .nav-pills .nav-link {
+  color: var(--muted);
+  background-color: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 9999px;
+  padding: 0.5rem 1.5rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+#location .nav-pills .nav-link:hover {
+  color: var(--text);
+  border-color: var(--primary);
+}
+
+#location .nav-pills .nav-link.active {
+  color: #ffffff;
+  background-color: var(--primary);
+  border-color: var(--primary);
+}

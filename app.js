@@ -269,6 +269,14 @@ document.addEventListener('DOMContentLoaded', () => {
   if (openEmailBtn) openEmailBtn.addEventListener('click', openPanel);
   if (closeBtn) closeBtn.addEventListener('click', closePanel);
   if (backdrop) backdrop.addEventListener('click', closePanel);
+
+  const locationTabs = document.getElementById('locationTabs');
+  if (locationTabs) {
+    locationTabs.addEventListener('shown.bs.tab', () => {
+      const currentLang = localStorage.getItem('mjb-language') || 'en';
+      applyLanguage(currentLang);
+    });
+  }
 });
   // CLIENT TAB SWITCH
   const clientTabs = document.querySelectorAll('.client-tab');
