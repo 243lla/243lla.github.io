@@ -355,3 +355,112 @@ body.dark-mode .lang-menu {
   background-color: var(--primary);
   border-color: var(--primary);
 }
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+
+.footer-root {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(160deg, #060e1f 0%, #0b1a36 50%, #071228 100%);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* Ambient glow orbs */
+.footer-glow {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(90px);
+  opacity: 0.22;
+}
+.footer-glow-left {
+  width: 480px;
+  height: 480px;
+  background: radial-gradient(circle, #1d4ed8 0%, transparent 70%);
+  top: -120px;
+  left: -160px;
+}
+.footer-glow-right {
+  width: 380px;
+  height: 380px;
+  background: radial-gradient(circle, #0ea5e9 0%, transparent 70%);
+  bottom: -80px;
+  right: -100px;
+  opacity: 0.14;
+}
+
+/* Section label */
+.footer-label {
+  color: #60a5fa;
+  letter-spacing: 0.22em;
+}
+
+/* Muted text */
+.footer-muted {
+  color: rgba(255, 255, 255, 0.48);
+}
+
+/* Glassmorphism contact card (left column) */
+.footer-contact-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+/* Icon wrapper */
+.footer-icon-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: rgba(59, 130, 246, 0.14);
+  color: #60a5fa;
+  border: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+/* Contact item labels & values */
+.footer-contact-label {
+  color: rgba(255, 255, 255, 0.38);
+}
+.footer-contact-value {
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 0.9375rem;
+  text-decoration: none;
+}
+.footer-contact-value:hover {
+  color: #ffffff;
+}
+
+/* Location dot */
+.footer-location-dot {
+  display: block;
+  flex-shrink: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #3b82f6;
+  margin-top: 6px;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+/* Location type badge */
+.footer-location-type {
+  color: #60a5fa;
+}
+
+/* Divider between locations */
+.footer-divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.07);
+}
+
+/* Bottom bar */
+.footer-bottom-bar {
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
