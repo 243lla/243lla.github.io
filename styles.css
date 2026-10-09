@@ -322,13 +322,10 @@ body.dark-mode .lang-menu {
   }
 
   .client-logo {
-    filter: grayscale(100%);
-    opacity: 0.8;
     transition: all 0.3s ease;
   }
 
   .client-card:hover .client-logo {
-    filter: grayscale(0%);
     opacity: 1;
     transform: scale(1.08);
   }

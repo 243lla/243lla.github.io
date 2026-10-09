@@ -132,31 +132,7 @@ document.addEventListener('DOMContentLoaded', () => {
     menuBtn.textContent = '✕';
   }
 
-  function updateHeaderOnScroll() {
-    const isScrolled = window.scrollY > 24;
 
-    if (!headerInner || !siteLogo || !siteBrand) return;
-
-    if (isScrolled) {
-      headerInner.classList.remove('py-5');
-      headerInner.classList.add('py-3');
-
-      siteLogo.classList.remove('h-12', 'md:h-14');
-      siteLogo.classList.add('h-9', 'md:h-10');
-
-      siteBrand.classList.remove('text-base', 'md:text-lg', 'tracking-[0.14em]');
-      siteBrand.classList.add('text-sm', 'md:text-base', 'tracking-[0.1em]');
-    } else {
-      headerInner.classList.remove('py-3');
-      headerInner.classList.add('py-5');
-
-      siteLogo.classList.remove('h-9', 'md:h-10');
-      siteLogo.classList.add('h-12', 'md:h-14');
-
-      siteBrand.classList.remove('text-sm', 'md:text-base', 'tracking-[0.1em]');
-      siteBrand.classList.add('text-base', 'md:text-lg', 'tracking-[0.14em]');
-    }
-  }
 
   function openPanel() {
     if (!wrapper || !panel) return;
@@ -222,8 +198,7 @@ document.addEventListener('DOMContentLoaded', () => {
     link.addEventListener('click', closeMobileMenu);
   });
 
-  window.addEventListener('scroll', updateHeaderOnScroll);
-  updateHeaderOnScroll();
+
 
   serviceCards.forEach(card => {
     card.addEventListener('click', () => {
