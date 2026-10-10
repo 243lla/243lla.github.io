@@ -252,7 +252,7 @@ document.addEventListener('DOMContentLoaded', () => {
       applyLanguage(currentLang);
     });
   }
-});
+
   // CLIENT TAB SWITCH
   const clientTabs = document.querySelectorAll('.client-tab');
   const clientCards = document.querySelectorAll('#client-grid .client-card');
@@ -270,15 +270,15 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
-  
 
   clientTabs.forEach(tab => {
     tab.addEventListener('click', () => {
       switchClientTab(tab.dataset.tab);
     });
   });
-  
 
   // default state
   switchClientTab('container');
+});
+
   
