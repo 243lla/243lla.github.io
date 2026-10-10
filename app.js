@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const closeBtn = document.getElementById('close-panel');
   const backdrop = document.getElementById('contact-backdrop');
 
-  const serviceCards = document.querySelectorAll('.service-card');
+
   const translationSource = window.MJB_TRANSLATIONS || {};
 
   const languageDropdowns = [
@@ -200,45 +200,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-  serviceCards.forEach(card => {
-    card.addEventListener('click', () => {
-      const isOpen = card.getAttribute('aria-expanded') === 'true';
 
-      serviceCards.forEach(otherCard => {
-        otherCard.setAttribute('aria-expanded', 'false');
-        otherCard.classList.remove('ring-1', 'ring-blue-400/30');
-
-        const otherContent = otherCard.querySelector('.service-content');
-        const otherIcon = otherCard.querySelector('.service-icon');
-
-        if (otherContent) {
-          otherContent.classList.remove('grid-rows-[1fr]');
-          otherContent.classList.add('grid-rows-[0fr]');
-        }
-
-        if (otherIcon) {
-          otherIcon.classList.remove('rotate-45');
-        }
-      });
-
-      if (!isOpen) {
-        card.setAttribute('aria-expanded', 'true');
-        card.classList.add('ring-1', 'ring-blue-400/30');
-
-        const content = card.querySelector('.service-content');
-        const icon = card.querySelector('.service-icon');
-
-        if (content) {
-          content.classList.remove('grid-rows-[0fr]');
-          content.classList.add('grid-rows-[1fr]');
-        }
-
-        if (icon) {
-          icon.classList.add('rotate-45');
-        }
-      }
-    });
-  });
 
   if (openBtn) openBtn.addEventListener('click', openPanel);
   if (openEmailBtn) openEmailBtn.addEventListener('click', openPanel);
@@ -281,4 +243,26 @@ document.addEventListener('DOMContentLoaded', () => {
   switchClientTab('container');
 });
 
-  
+// SERVICE CARD EXPANSION
+function toggleServiceCard(cardElement) {
+  if (!cardElement) return;
+  const content = cardElement.querySelector('.expandable-content');
+  const icon = cardElement.querySelector('.toggle-icon');
+
+  if (!content) return;
+
+  // Toggle visibility of the expandable content
+  content.classList.toggle('hidden');
+
+  // Rotate icon (+ to x)
+  if (icon) {
+    if (content.classList.contains('hidden')) {
+      icon.textContent = '+';
+      icon.style.transform = 'rotate(0deg)';
+    } else {
+      icon.textContent = '+';
+      icon.style.transform = 'rotate(45deg)'; // Rotates + to an x
+    }
+  }
+}
+window.toggleServiceCard = toggleServiceCard;

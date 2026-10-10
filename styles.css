@@ -115,6 +115,16 @@ body {
   border-color: color-mix(in srgb, var(--card-border) 70%, var(--text) 18%);
 }
 
+.toggle-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  line-height: 1;
+  user-select: none;
+}
+
 .theme-toggle,
 .lang-toggle {
   border: 1px solid var(--card-border);
